@@ -16,7 +16,7 @@ File Directory Structure:
 ---
 
 Project Statement:
-> This repository is the home to all code (html, javascript, css, and bootstrap) that belongs to the design of my personal portfolio website. This project is the intellectual property of the creator under the GitHub alias of FallenEdge also known as Celine Tannous to include any code posted or presented on the website. The intended purpose of this website is to provide a basic introduction of myself and display technical applications of my cyber security related skills for future employers.
+> This repository is the home to all code (html, javascript, css, and bootstrap) that belongs to the design of my personal portfolio website. This project is the intellectual property of the creator under the GitHub alias of ObsidianNull also known as Celine Tannous to include any code posted or presented on the website. The intended purpose of this website is to provide a basic introduction of myself and display technical applications of my cyber security related skills for future employers.
 ---
 
 Contact Information:
