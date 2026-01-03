@@ -1,277 +1,605 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-  <meta name="description" content="Portfolio of [Your Name] — web developer, designer, projects and contact." />
-  <title>[Your Name] — Portfolio</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
+  <meta name="description" content="ObsidianNull - LT Celine Tannous | Cybersecurity Professional | Red Team Specialist | Military Leader"/>
+  <title>ObsidianNull | Celine Tannous - Cybersecurity Arsenal</title>
 
   <!-- Bootstrap (local) -->
   <link rel="stylesheet" href="resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
 
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts: Inter (UI) + JetBrains Mono (terminal/code) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- EmailJS for GitHub Pages contact form -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    try {
+      const params = new URLSearchParams(location.search);
+      if (params.get('intro') === '1') {
+        try { sessionStorage.removeItem('introSeen'); } catch (e) {}
+        document.documentElement.classList.remove('skip-intro');
+      } else if (sessionStorage.getItem('introSeen') === '1') {
+        document.documentElement.classList.add('skip-intro');
+      }
+    } catch (e) { /* ignore storage errors */ }
+  </script>
   <!-- Custom styles -->
   <link rel="stylesheet" href="resources/css/index.css">
-
-  <!-- Favicon (optional) -->
-  <link rel="icon" href="resources/css/images/logo.png" />
-  
-  <style>
-    /* Small inline helper styles — move into index.css if preferred */
-    .hero {
-      min-height: 60vh;
-      display:flex;
-      align-items:center;
-      background: url('resources/css/images/header-background.jpg') center/cover no-repeat;
-      color:#fff;
-      position:relative;
-    }
-    .hero::after {
-      content:"";
-      position:absolute; inset:0; background: rgba(0,0,0,0.45);
-    }
-    .hero .container { position:relative; z-index:1; }
-    .project-card img { object-fit:cover; height:180px; }
-  </style>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom" aria-label="Main navigation">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#home">
-          <img src="resources/css/images/logo.png" alt="[Your Name] logo" width="40" height="40" class="mr-2">
-          <span class="font-weight-bold">[Your Name]</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- Intro Loading Animation -->
+  <div class="intro">
+    <div class="intro-content">
+      <img src="resources/images/logojpg.jpg" alt="ObsidianNull Logo" class="intro-logo" loading="eager" decoding="async">
+    </div>
+  </div>
 
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-            <li class="nav-item ml-2"><a class="btn btn-outline-primary" href="resources/css/images/resume.jpg" target="_blank" rel="noopener">Resume</a></li>
-          </ul>
+  <!-- Main Navigation -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top cyber-nav">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="resources/images/logopng.png" alt="ObsidianNull Logo" class="brand-logo" loading="eager" decoding="async">
+        <span class="brand-null">ObsidianNull</span>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <div class="cyber-burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </div>
-    </nav>
-  </header>
+      </button>
 
-  <main>
-    <!-- Hero -->
-    <section id="home" class="hero d-flex align-items-center" role="region" aria-label="Intro">
-      <div class="container text-center text-md-left">
-        <div class="row">
-          <div class="col-md-7">
-            <h1 class="display-4">Hi, I'm [Your Name]</h1>
-            <p class="lead">Web developer & designer. I build accessible, performant, and delightful web experiences.</p>
-            <p>
-              <a class="btn btn-primary btn-lg mr-2" href="#projects">View work</a>
-              <a class="btn btn-outline-light btn-lg" href="#contact">Get in touch</a>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Intel</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Arsenal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Credentials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Comms</a></li>
+          <li class="nav-item">
+            <a class="nav-link resume-btn" href="resources/images/coming-soon.jpg" target="_blank">
+              <i class="fas fa-download"></i> Extract Resume
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-matrix"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <div class="rank-badge">
+              <span class="rank-insignia">
+                <span class="rank-bar"></span>
+                <span class="rank-bar"></span>
+              </span>
+              <span>U.S. Navy Lieutenant</span>
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Celine Tannous</span>
+              <span class="handle-line">@ObsidianNull</span>
+            </h1>
+            <div class="hero-tags">
+              <span class="tag cyber-defense">Cyber Defense</span>
+              <span class="tag leadership">Military Leadership</span>
+              <span class="tag red-team">Red Team Enthusiast</span>
+            </div>
+            <p class="hero-description">
+              I’m a Nuclear Surface Warfare Officer with a background in cyber operations. I’ve led technical teams in high-risk, mission-critical environments, served as a shipboard Cyber Officer, and managed complex systems where reliability and security are non-negotiable. My work bridges operational leadership and hands-on technical expertise, with a focus on cybersecurity, risk management, and resilient systems.
             </p>
-          </div>
-          <div class="col-md-5 d-none d-md-block">
-            <img src="resources/css/images/Display Image 1.png" alt="[Your portrait]" class="img-fluid rounded shadow">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-5" role="region" aria-label="About me">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-4 text-center">
-            <img src="resources/css/images/aboutme.jpg" alt="Photo of [Your Name]" class="img-fluid rounded mb-3">
-          </div>
-          <div class="col-md-8">
-            <h2>About me</h2>
-            <p>Short paragraph summarizing who you are, what you do, and what tools you enjoy. Keep it concise (< 120 words).</p>
-            <ul>
-              <li>Location — e.g., Remote / City, Country</li>
-              <li>Available for freelance or full-time</li>
-              <li>Favorite stack: HTML, CSS, JS, React, Node (example)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-5 bg-light" role="region" aria-label="Projects">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h2 class="mb-0">Projects</h2>
-          <p class="mb-0 text-muted">Selected work — click to view details</p>
-        </div>
-
-        <div class="row">
-          <!-- Project card example -->
-          <div class="col-md-4 mb-4">
-            <article class="card project-card h-100" aria-labelledby="proj1-title">
-              <img src="resources/css/images/portfolio.jpg" class="card-img-top" alt="Screenshot of Project One">
-              <div class="card-body d-flex flex-column">
-                <h3 id="proj1-title" class="h5 card-title">Project One</h3>
-                <p class="card-text text-muted">Short description (1–2 lines) describing goal and tech used.</p>
-                <div class="mt-auto">
-                  <a class="btn btn-outline-primary btn-sm mr-2" href="#" target="_blank" rel="noopener">Live</a>
-                  <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noopener">Source</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <!-- Duplicate/replace cards for other projects -->
-          <div class="col-md-4 mb-4">
-            <article class="card h-100 project-card" aria-labelledby="proj2-title">
-              <img src="resources/css/images/mywork.jpg" class="card-img-top" alt="Screenshot of Project Two">
-              <div class="card-body d-flex flex-column">
-                <h3 id="proj2-title" class="h5 card-title">Project Two</h3>
-                <p class="card-text text-muted">Brief description and the impact.</p>
-                <div class="mt-auto">
-                  <a class="btn btn-outline-primary btn-sm mr-2" href="#" target="_blank" rel="noopener">Live</a>
-                  <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noopener">Source</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-md-4 mb-4">
-            <article class="card h-100 project-card" aria-labelledby="proj3-title">
-              <img src="resources/css/images/packages.jpg" class="card-img-top" alt="Screenshot of Project Three">
-              <div class="card-body d-flex flex-column">
-                <h3 id="proj3-title" class="h5 card-title">Project Three</h3>
-                <p class="card-text text-muted">Short explanatory sentence about the project.</p>
-                <div class="mt-auto">
-                  <a class="btn btn-outline-primary btn-sm mr-2" href="#" target="_blank" rel="noopener">Live</a>
-                  <a class="btn btn-outline-secondary btn-sm" href="#" target="_blank" rel="noopener">Source</a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-5" role="region" aria-label="Skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <p class="text-muted">A concise list or progress bars for your main skills.</p>
-        <div class="row">
-          <div class="col-sm-6 col-md-3 mb-3">
-            <div class="border rounded p-3 h-100 text-center">
-              <strong>HTML/CSS</strong>
-              <div class="text-muted small">Semantic HTML, responsive CSS</div>
+            <div class="hero-actions">
+              <a href="#projects" class="btn-cyber primary">Explore Arsenal</a>
+              <a href="#contact" class="btn-cyber secondary">Establish Comms</a>
             </div>
           </div>
-          <div class="col-sm-6 col-md-3 mb-3">
-            <div class="border rounded p-3 h-100 text-center">
-              <strong>JavaScript</strong>
-              <div class="text-muted small">ES6+, DOM, async</div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 mb-3">
-            <div class="border rounded p-3 h-100 text-center">
-              <strong>React</strong>
-              <div class="text-muted small">SPA, hooks, performance</div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 mb-3">
-            <div class="border rounded p-3 h-100 text-center">
-              <strong>Design</strong>
-              <div class="text-muted small">Figma, prototyping, UX</div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-visual">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-buttons">
+                  <span class="btn-red"></span>
+                  <span class="btn-yellow"></span>
+                  <span class="btn-green"></span>
+                </div>
+                <span class="terminal-title">Terminal</span>
+              </div>
+              <div class="terminal-body" id="terminalContent">
+                <div class="output" id="terminalOutput"></div>
+                <div class="terminal-input-line">
+                  <span class="prompt">root@obsidiannull:~$</span>
+                  <span class="terminal-cursor">_</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-5 bg-light" role="region" aria-label="Contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="text-muted">I'd love to hear about your project or opportunity.</p>
-
-        <div class="row">
-          <div class="col-md-7">
-            <!-- Replace action with a backend or form provider (Netlify Forms, Formspree) in production -->
-            <form aria-label="Contact form" method="post" action="mailto:your@email.example" 
-                  onsubmit="alert('This is a demo. Replace with a real form handler.'); return false;">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="name">Name</label>
-                  <input id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" name="email" class="form-control" required>
-                </div>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-user-shield"></i>
+          Intelligence Brief
+        </h2>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <div class="operator-card">
+            <div class="card-header">
+              <div class="status-indicator active"></div>
+              <span>ACTIVE OPERATOR</span>
+            </div>
+            <div class="operator-image">
+              <img src="resources/images/uniformpic.jpeg" alt="LT Celine Tannous" class="img-fluid">
+              <div class="clearance-badge">TS/SCI</div>
+            </div>
+            <div class="operator-info">
+              <h3>LT Celine Tannous</h3>
+              <p class="handle">@ObsidianNull</p>
+              <div class="location">
+                <i class="fas fa-map-marker-alt"></i>
+                San Diego, CA | Remote Operations
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="intel-content">
+            <div class="mission-statement">
+              <h3>Mission Statement</h3>
+              <p>My mission is to grow into a skilled cybersecurity professional by applying the discipline, leadership, and risk awareness I developed in high-stakes operational environments, while continuously learning and improving my technical craft.</p>
+            </div>
+            <div class="capabilities-grid">
+              <div class="capability">
+                <i class="fas fa-crosshairs"></i>
+                <h4>Offensive Operations</h4>
+                <p>Penetration testing and red team methodologies</p>
+              </div>
+              <div class="capability">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Defense Architecture</h4>
+                <p>Zero-trust security design and incident response leadership</p>
+              </div>
+              <div class="capability">
+                <i class="fas fa-users-cog"></i>
+                <h4>Team Leadership</h4>
+                <p>Military-trained leadership and cybersecurity team management</p>
+              </div>
+              <div class="capability">
+                <i class="fas fa-search"></i>
+                <h4>Threat Intelligence</h4>
+                <p>Advanced persistent threat analysis and threat hunting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Projects/Labs Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-flask"></i>
+          Cyber Arsenal & Labs
+        </h2>
+        <p class="section-subtitle">Curated collection of cybersecurity projects, research, and practical demonstrations</p>
+      </div>
+      <div class="arsenal-grid">
+        <!-- Project 1 -->
+        <div class="arsenal-item" data-category="red-team">
+          <div class="item-header">
+            <div class="classification">UNCLASSIFIED</div>
+            <div class="category-tag red-team">Red Team</div>
+          </div>
+          <div class="item-content">
+            <i class="fas fa-bug"></i>
+            <h3>Advanced Persistent Threat Simulation</h3>
+            <p>Full-scale APT simulation targeting enterprise environment with custom malware and persistence mechanisms.</p>
+            <div class="tech-stack">
+              <span>Metasploit</span>
+              <span>Custom C2</span>
+              <span>PowerShell</span>
+            </div>
+          </div>
+          <div class="item-actions">
+            <a href="#" class="action-btn">
+              <i class="fas fa-eye"></i> View Details
+            </a>
+            <a href="#" class="action-btn">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="arsenal-item" data-category="defense">
+          <div class="item-header">
+            <div class="classification">UNCLASSIFIED</div>
+            <div class="category-tag defense">Blue Team</div>
+          </div>
+          <div class="item-content">
+            <i class="fas fa-network-wired"></i>
+            <h3>Zero-Trust Network Architecture</h3>
+            <p>Implementation of enterprise zero-trust security model with micro-segmentation and continuous verification.</p>
+            <div class="tech-stack">
+              <span>pfSense</span>
+              <span>Zeek</span>
+              <span>ELK Stack</span>
+            </div>
+          </div>
+          <div class="item-actions">
+            <a href="#" class="action-btn">
+              <i class="fas fa-eye"></i> View Details
+            </a>
+            <a href="#" class="action-btn">
+              <i class="fas fa-download"></i> Whitepaper
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="arsenal-item" data-category="forensics">
+          <div class="item-header">
+            <div class="classification">UNCLASSIFIED</div>
+            <div class="category-tag forensics">Forensics</div>
+          </div>
+          <div class="item-content">
+            <i class="fas fa-search"></i>
+            <h3>Automated Malware Analysis Pipeline</h3>
+            <p>Custom-built automated malware analysis system with dynamic and static analysis capabilities.</p>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Volatility</span>
+              <span>YARA</span>
+            </div>
+          </div>
+          <div class="item-actions">
+            <a href="#" class="action-btn">
+              <i class="fas fa-eye"></i> View Details
+            </a>
+            <a href="#" class="action-btn">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="arsenal-item" data-category="research">
+          <div class="item-header">
+            <div class="classification">UNCLASSIFIED</div>
+            <div class="category-tag research">Research</div>
+          </div>
+          <div class="item-content">
+            <i class="fas fa-brain"></i>
+            <h3>AI-Powered Threat Hunting</h3>
+            <p>Machine learning model for automated threat detection and behavioral analysis in enterprise networks.</p>
+            <div class="tech-stack">
+              <span>TensorFlow</span>
+              <span>Pandas</span>
+              <span>Splunk</span>
+            </div>
+          </div>
+          <div class="item-actions">
+            <a href="#" class="action-btn">
+              <i class="fas fa-eye"></i> View Details
+            </a>
+            <a href="#" class="action-btn">
+              <i class="fas fa-file-pdf"></i> Research Paper
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Filter Controls -->
+      <div class="arsenal-filters">
+        <button class="filter-btn active" data-filter="all">All Arsenal</button>
+        <button class="filter-btn" data-filter="red-team">Red Team</button>
+        <button class="filter-btn" data-filter="defense">Blue Team</button>
+        <button class="filter-btn" data-filter="forensics">Forensics</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-certificate"></i>
+          Credentials & Clearances
+        </h2>
+        <p class="section-subtitle">Professional certifications and security clearances validating expertise</p>
+      </div>
+      
+      <div class="credentials-grid">
+        <!-- Clearance -->
+        <div class="credential-card clearance">
+          <div class="card-header">
+            <div class="clearance-level">TOP SECRET/SCI</div>
+            <div class="status active">ACTIVE</div>
+          </div>
+          <div class="card-content">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Security Clearance</h3>
+            <p>Top Secret/Sensitive Compartmented Information</p>
+            <div class="issuer">U.S. Department of Defense</div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="credential-card education">
+          <div class="card-header">
+            <div class="degree">BS Cyber Operations</div>
+            <div class="year">2021</div>
+          </div>
+          <div class="card-content">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>CAE-CO Graduate</h3>
+            <p>Center of Academic Excellence in Cyber Operations</p>
+            <div class="issuer">U.S. Naval Academy</div>
+          </div>
+        </div>
+
+        <!-- CompTIA Security+ -->
+        <div class="credential-card certification" data-cert="security-plus">
+          <div class="card-header">
+            <div class="cert-logo">
+              <img src="resources/images/comptia-security-plus.png" alt="Security+" onerror="this.style.display='none'">
+            </div>
+            <a class="verification-btn" href="resources/images/CompTIA%20Security%2B%20ce%20certificate.pdf" target="_blank" rel="noopener" aria-label="View Security+ certificate (PDF)" title="View Security+ certificate (PDF)">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="card-content">
+            <h3>CompTIA Security+</h3>
+            <p>DoD 8570 IAT Level II Baseline</p>
+            <div class="cert-details">
+              <span class="cert-id">Cert ID: SY0-701</span>
+              <span class="expiry">Valid: 2025-2028</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CompTIA PenTest+ -->
+        <div class="credential-card certification" data-cert="pentest-plus">
+          <div class="card-header">
+            <div class="cert-logo">
+              <img src="resources/images/comptia-pentest-plus.png" alt="PenTest+" onerror="this.style.display='none'">
+            </div>
+            <div class="verification-btn">
+              <i class="fas fa-external-link-alt"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>CompTIA PenTest+</h3>
+            <p>Advanced Penetration Testing</p>
+            <div class="cert-details">
+              <span class="status">In Progress</span>
+              <span class="target">Target: Q1 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CompTIA CySA+ (In Progress) -->
+        <div class="credential-card certification in-progress" data-cert="cysa-plus">
+          <div class="card-header">
+            <div class="cert-logo">
+              <img src="resources/images/comptia-cysa-plus.png" alt="CompTIA CySA+" onerror="this.style.display='none'">
+            </div>
+            <div class="progress-indicator">
+              <i class="fas fa-clock"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>CompTIA CySA+</h3>
+            <p>Cybersecurity Analyst (CySA+)</p>
+            <div class="cert-details">
+              <span class="status">In Progress</span>
+              <span class="target">Target: Q2 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- OSCP (Planned) -->
+        <div class="credential-card certification planned" data-cert="oscp">
+          <div class="card-header">
+            <div class="cert-logo">
+              <img src="resources/images/oscp-logo.png" alt="OSCP" onerror="this.style.display='none'">
+            </div>
+            <div class="planned-indicator">
+              <i class="fas fa-calendar-plus"></i>
+            </div>
+          </div>
+          <div class="card-content">
+            <h3>OSCP</h3>
+            <p>Offensive Security Certified Professional</p>
+            <div class="cert-details">
+              <span class="status">Planned</span>
+              <span class="target">Target: Q3 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-satellite-dish"></i>
+          Establish Communications
+        </h2>
+        <p class="section-subtitle">Secure channels available for professional collaboration and opportunities</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="comms-terminal">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn-red"></span>
+                <span class="btn-yellow"></span>
+                <span class="btn-green"></span>
+              </div>
+              <span class="terminal-title">secure-comms@obsidiannull</span>
+            </div>
+            <form id="contactForm" class="terminal-form">
               <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                <label class="terminal-label">$ enter-name --required</label>
+                <input type="text" id="name" name="name" class="terminal-input" 
+                       required maxlength="100" 
+                       pattern="^[a-zA-Z\s\-\'\.]{2,100}$"
+                       placeholder="Your full name">
               </div>
-
+              
               <div class="form-group">
-                <button class="btn btn-primary" type="submit">Send message</button>
-                <small class="form-text text-muted d-inline ml-2">Or email me at <a href="mailto:your@email.example">email</a></small>
+                <label class="terminal-label">$ enter-email --encrypted</label>
+                <input type="email" id="email" name="email" class="terminal-input" 
+                       required maxlength="255"
+                       placeholder="your.email@domain.com">
               </div>
+              
+              <div class="form-group">
+                <label class="terminal-label">$ compose-message --secure</label>
+                <textarea id="message" name="message" class="terminal-textarea" 
+                          required maxlength="2000" minlength="10" rows="6"
+                          placeholder="Describe your project, opportunity, or collaboration..."></textarea>
+                <div class="char-counter">
+                  <span id="charCount">0</span>/2000 characters
+                </div>
+              </div>
+              
+              <!-- Honeypot -->
+              <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+              
+              <button type="submit" class="btn-cyber primary" id="submitBtn">
+                <span class="btn-text">
+                  <i class="fas fa-paper-plane"></i>
+                  Transmit Message
+                </span>
+                <span class="btn-spinner" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  Encrypting & Sending...
+                </span>
+              </button>
             </form>
           </div>
-
-          <aside class="col-md-5">
-            <div class="border rounded p-3 mb-3">
-              <h3 class="h6">Contact info</h3>
-              <p class="mb-1">Location: City, Country</p>
-              <p class="mb-1">Email: <a href="mailto:your@email.example">your@email.example</a></p>
-              <p class="mb-1">Phone: +1 (555) 555-5555 (optional)</p>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="contact-methods">
+            <h3>Alternative Communication Channels</h3>
+            
+            <div class="contact-grid">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope-open"></i>
+                </div>
+                <div class="contact-info">
+                  <h4>Direct Email</h4>
+                  <a href="mailto:celinetannous2021@gmail.com">celinetannous2021@gmail.com</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact-info">
+                  <h4>Secure Line</h4>
+                  <a href="tel:+17203183311">+1 (720) 318-3311</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fab fa-linkedin"></i>
+                </div>
+                <div class="contact-info">
+                  <h4>Professional Network</h4>
+                  <a href="https://linkedin.com/in/celine-tannous-34a44a1a7" target="_blank">LinkedIn Profile</a>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fab fa-github"></i>
+                </div>
+                <div class="contact-info">
+                  <h4>Code Repository</h4>
+                  <a href="https://github.com/ObsidianNull" target="_blank">@ObsidianNull</a>
+                </div>
+              </div>
             </div>
-
-            <div class="border rounded p-3">
-              <h3 class="h6">Social</h3>
-              <p class="mb-0">
-                <a href="#" class="mr-2">GitHub</a>
-                <a href="#" class="mr-2">LinkedIn</a>
-                <a href="#">Twitter</a>
-              </p>
+            
+            <div class="availability-status">
+              <div class="status-indicator active"></div>
+              <div class="status-text">
+                <h4>Current Availability</h4>
+                <p>Available for freelance projects and looking for future full-time opportunities in cybersecurity roles for Winter 2026.</p>
+                <small>Response time: Within 24 hours</small>
+              </div>
             </div>
-          </aside>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
-
-  <footer class="py-4 bg-white border-top">
-    <div class="container text-center">
-      <small class="text-muted">© <span id="year"></span> [Your Name]. Built with Bootstrap.</small>
+  <!-- Footer -->
+  <footer class="cyber-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>ObsidianNull</h3>
+          <p>Hard Systems. Harder Standards.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">Intel</a>
+          <a href="#projects">Arsenal</a>
+          <a href="#certifications">Credentials</a>
+          <a href="#contact">Comms</a>
+        </div>
+        <div class="footer-meta">
+          <p>&copy; <span id="year"></span> Celine Tannous | ObsidianNull</p>
+          <p>Classified operations not displayed</p>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- jQuery (local) -->
+  <!-- Scripts -->
   <script src="resources/JQuery/jquery-3.6.3.min.js"></script>
-
-  <!-- Bootstrap JS (local) -->
   <script src="resources/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Custom JS -->
+  <script src="resources/javascript/intro.js"></script>
   <script src="resources/javascript/index.js"></script>
+  <script src="resources/javascript/contact-validation-github.js"></script>
 
   <script>
-    // small helper
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Smooth scroll for nav anchor links (improves UX)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
   </script>
 </body>
 </html>
