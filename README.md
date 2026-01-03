@@ -1,6 +1,6 @@
 # 🛡️ Celine Tannous - Cybersecurity Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-brightgreen)](https://fallenedge.github.io)
+[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-brightgreen)](https://obsidiannull.github.io)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Security](https://img.shields.io/badge/Security-Hardened-success)](docs/security.md)
 
@@ -11,6 +11,7 @@ A modern, responsive portfolio website showcasing cybersecurity expertise, milit
 ## 🚀 Live Demo
 
 **Website:** [https://celinetannous.com](https://celinetannous.com)
+**Fallback:** [https://obsidiannull.github.io](https://obsidiannull.github.io)
 
 ## 📋 Table of Contents
 
@@ -30,18 +31,24 @@ A modern, responsive portfolio website showcasing cybersecurity expertise, milit
 
 ### 🎨 **Design & User Experience**
 
-- **Responsive Design**: Mobile-first approach with Bootstrap 4.3.1
-- **Dark/Light Theme**: Toggle between cyber-themed dark mode and clean light mode
-- **Smooth Scrolling**: Full-screen sections with CSS scroll-snap
-- **Cyber Aesthetic**: Neon blue (#00A8E8) and matrix green (#00FF88) color scheme
-- **Professional Branding**: Custom handle badge system (@ObsidianNull)
+- **Responsive Design**: Bootstrap 4.3.1 grid and components
+- **Cyber Aesthetic**: Obsidian/neon-blue palette driven by CSS variables
+- **Fullscreen Intro**: Session-gated splash with quick fade; override via `?intro=1`
+- **Smooth Sections**: Full-viewport sections with CSS scroll-snap
+- **Typography**: Inter (UI) + JetBrains Mono (terminal/intro)
 
 ### 📱 **Navigation & Layout**
 
-- **Fixed Navigation**: Persistent navbar with handle badge and description
+- **Fixed Navigation**: Persistent navbar with brand logo
 - **Section Snapping**: Smooth transitions between full-viewport sections
-- **Responsive Buttons**: Side-positioned hero buttons for better mobile experience
-- **Theme Persistence**: Theme preference saved in localStorage
+- **Hero Terminal**: Terminal component positioned alongside hero content on desktop
+- **Scroll Enhancements**: Smooth scrolling and intersection-based fade-ins
+
+### 🖥️ **Terminal & Interactions**
+
+- **Interactive Terminal**: Document-level command input (help, about, skills, projects, contact, etc.)
+- **Type/Matrix Easter Egg**: Optional matrix rain effect using theme colors
+- **No Visible Input**: Clean terminal UI with prompt and output only
 
 ### 🛡️ **Security-First Contact Form**
 
@@ -54,11 +61,9 @@ A modern, responsive portfolio website showcasing cybersecurity expertise, milit
 
 ### 📧 **Contact Integration**
 
-- **EmailJS Integration**: Serverless email functionality for GitHub Pages
-- **Form Analytics**: Character counting and validation feedback
-- **Loading States**: Visual feedback during form submission
-- **Success/Error Alerts**: Bootstrap-styled notifications
-- **Direct Email Fallback**: Alternative contact method included
+- **EmailJS Integration**: Serverless email via `resources/javascript/contact-validation-github.js`
+- **Validation**: Real-time checks, sanitization, and honeypot bot trap
+- **UX Feedback**: Character counter, loading state, and clear success/error messages
 
 ## 🔧 Technology Stack
 
@@ -116,22 +121,31 @@ validateName(name) {
 ## 📁 Project Structure
 
 ```text
-fallenedge.github.io/
-├── 📄 index.html                              # Main portfolio page
-├── 📖 README.md                               # Project documentation
-├── 📧 EMAIL_SETUP_GUIDE.md                    # EmailJS configuration guide
-├── 🌐 CNAME                                   # Custom domain configuration
-├── ⚙️ .github/workflows/deploy.yml            # GitHub Pages deployment
-└── 📂 resources/
-    ├── 🎨 css/
-    │   └── index.css                          # Custom styles and themes
-    ├── 🖼️ images/                             # Portfolio images and assets
-    ├── 📜 javascript/
-    │   ├── contact-validation-github.js       # Secure contact form handler
-    │   ├── index.js                          # Main site functionality
-    │   └── intro.js                          # Intro animation effects
-    ├── 🅱️ bootstrap-4.3.1-dist/              # Bootstrap framework
-    └── 📚 jQuery/                             # jQuery library
+obsidiannull.github.io/
+├── index.html                         # Main portfolio page
+├── README.md                          # Documentation (this file)
+├── EMAIL_SETUP_GUIDE.md               # EmailJS configuration guide
+├── CNAME                              # Custom domain (celinetannous.com)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml                 # GitHub Pages deployment workflow
+└── resources/
+  ├── css/
+  │   ├── index.css                  # Theme, components, animations
+  │   └── index-backup.css           # Backup stylesheet
+  ├── javascript/
+  │   ├── index.js                   # Main site logic (nav, terminal, effects)
+  │   ├── intro.js                   # Intro/splash lifecycle
+  │   ├── contact-validation-github.js # Contact form validation + EmailJS
+  │   └── index-backup.js            # Backup script
+  ├── images/
+  │   ├── logojpg.jpg                # Splash/branding image
+  │   ├── logopng.png                # Navbar brand logo
+  │   ├── comptia-security-plus.png  # Security+ badge
+  │   ├── CompTIA Security+ ce certificate.pdf # Security+ certificate (PDF)
+  │   └── coming-soon.jpg            # Placeholder asset
+  ├── bootstrap-4.3.1-dist/          # Local Bootstrap build
+  └── jQuery/                        # jQuery 3.6.3
 ```
 
 ## 🚀 Installation & Setup
@@ -146,10 +160,10 @@ fallenedge.github.io/
 
 ```bash
 # Clone the repository
-git clone https://github.com/FallenEdge/fallenedge.github.io.git
+git clone https://github.com/ObsidianNull/obsidiannull.github.io.git
 
 # Navigate to the project directory
-cd fallenedge.github.io
+cd obsidiannull.github.io
 
 # Open in your preferred code editor
 code .
@@ -232,10 +246,19 @@ Edit CSS custom properties in `resources/css/index.css`:
 
 ```css
 :root {
-  --neon-blue: #00A8E8;           /* Primary accent */
-  --matrix-green: #00FF88;        /* Secondary accent */
-  --jet-black: #0E1111;           /* Background */
-  --white-smoke: #F5F5F5;         /* Text */
+  /* Accents */
+  --primary-blue: #00E5FF;   /* Neon cyan */
+  --primary-green: #1FA2FF;  /* Electric blue */
+  --primary-red: #FF4D4D;    /* Warnings */
+
+  /* Surfaces */
+  --bg-primary: #050B1A;     /* Obsidian navy */
+  --bg-secondary: #0B1E3A;   /* Midnight blue */
+  --bg-tertiary: #112B4D;    /* Deep steel blue */
+
+  /* Text */
+  --text-primary: #EAF6FF;   /* Ice white */
+  --text-secondary: #8FAFC6; /* Muted steel */
 }
 ```
 
@@ -247,21 +270,10 @@ Edit CSS custom properties in `resources/css/index.css`:
 - **Skills**: Update technology skills and certifications
 - **Social Links**: Modify social media profiles
 
-### **Theme Toggle**
+### **Typography**
 
-The theme system supports easy customization:
-
-```css
-[data-theme="light"] {
-  --primary-color: #007bff;
-  --bg-color: #ffffff;
-}
-
-[data-theme="dark"] {
-  --primary-color: #00A8E8;
-  --bg-color: #0E1111;
-}
-```
+- UI: Inter
+- Terminal/Intro/Code: JetBrains Mono
 
 ## ⚡ Performance
 
@@ -284,7 +296,7 @@ The theme system supports easy customization:
 
 ```bash
 # Check performance with Lighthouse
-npx lighthouse https://fallenedge.github.io
+npx lighthouse https://obsidiannull.github.io
 
 # Analyze bundle size
 npx bundlesize
@@ -346,11 +358,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 🛡️ Cybersecurity Professional  
 🔍 @ObsidianNull  
 
-📧 **Email**: [celinetannous2021@gmail.com](mailto:celinetannous2021@gmail.com)  
+📧 **Email**: [obsidiannullsec@gmail.com](mailto:obsidiannullsec@gmail.com)  
 📱 **Phone**: +1 (720) 318-3311  
-🌐 **Portfolio**: [https://fallenedge.github.io](https://fallenedge.github.io)  
+🌐 **Portfolio**: [https://obsidiannull.github.io](https://obsidiannull.github.io)  
 💼 **LinkedIn**: [linkedin.com/in/celine-tannous-34a44a1a7](https://linkedin.com/in/celine-tannous-34a44a1a7)  
-🐱 **GitHub**: [github.com/FallenEdge](https://github.com/FallenEdge)  
+🐱 **GitHub**: [github.com/ObsidianNull](https://github.com/ObsidianNull)  
 🐦 **Twitter/X**: [@ObsidianNull](https://x.com/ObsidianNull)  
 🎯 **TryHackMe**: [tryhackme.com/r/p/ObsidianNull](https://tryhackme.com/r/p/ObsidianNull)  
 
@@ -358,5 +370,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 > "Defending the Digital Domain — From Mission to Innovation"
 
-**Last Updated**: November 2, 2025  
+**Last Updated**: January 3, 2026  
 **Created**: August 12, 2022
