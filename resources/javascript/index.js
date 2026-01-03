@@ -82,8 +82,17 @@
         let currentInput = '';
         let isTypingMode = false;
 
+        // Mobile terminal input elements
+        const mobileInput = document.getElementById('terminalMobileInput');
+        const mobileSend = document.getElementById('terminalMobileSend');
+        const isMobileScreen = window.matchMedia('(max-width: 992px)');
+
         // Handle command input from document
         document.addEventListener('keydown', (e) => {
+            // If a focused input/textarea or mobile input exists, let it handle typing
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) {
+                return;
+            }
             // Toggle typing mode with 'T' key
             if (e.key.toLowerCase() === 't' && !isTypingMode && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
                 e.preventDefault();
@@ -154,6 +163,40 @@
                 const cursorChar = isTypingMode ? '█' : '_';
                 promptLine.innerHTML = `<span class="prompt">root@obsidiannull:~$</span> <span style="color: var(--text-primary);">${escapeHtml(currentInput)}</span><span class="terminal-cursor" style="color: ${isTypingMode ? 'var(--primary-green)' : 'var(--primary-blue)'};">${cursorChar}</span>`;
             }
+        }
+
+        // Mobile command handling
+        function runMobileCommand() {
+            if (!mobileInput) return;
+            const command = (mobileInput.value || '').trim();
+            if (!command) return;
+
+            // Add command to history
+            commandHistory.unshift(command);
+            historyIndex = -1;
+
+            // Echo command to terminal and execute
+            addOutput(`<span style="color: var(--primary-green);">root@obsidiannull:~$</span> ${escapeHtml(command)}`);
+            executeCommand(command);
+
+            // Clear and refocus
+            mobileInput.value = '';
+            mobileInput.blur();
+        }
+
+        if (mobileInput) {
+            mobileInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    runMobileCommand();
+                }
+            });
+        }
+
+        if (mobileSend) {
+            mobileSend.addEventListener('click', () => {
+                runMobileCommand();
+            });
         }
     }
 

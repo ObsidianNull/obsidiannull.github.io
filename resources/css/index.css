@@ -608,6 +608,11 @@ body {
   font-weight: 600;
 }
 
+.terminal-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
 .terminal-body {
   padding: 1rem;
   min-height: 200px;
@@ -620,6 +625,39 @@ body {
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
+}
+
+/* Mobile terminal controls (hidden on desktop) */
+.terminal-mobile-controls {
+  display: none;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.terminal-mobile-input {
+  flex: 1;
+  background: var(--bg-primary);
+  border: 2px solid var(--primary-blue);
+  border-radius: 6px;
+  color: var(--text-primary);
+  padding: 0.6rem 0.8rem;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.terminal-mobile-input::placeholder {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 992px) {
+  /* Show mobile input bar on smaller screens */
+  .terminal-mobile-controls {
+    display: flex;
+  }
+  /* Optionally hide the desktop-style prompt line for clarity */
+  .terminal-input-line {
+    display: none;
+  }
 }
 
 .terminal-cursor {

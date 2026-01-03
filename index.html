@@ -115,12 +115,22 @@
                   <span class="btn-green"></span>
                 </div>
                 <span class="terminal-title">Terminal</span>
+                <span class="terminal-hint">Tap on mobile; press T on desktop</span>
               </div>
               <div class="terminal-body" id="terminalContent">
                 <div class="output" id="terminalOutput"></div>
                 <div class="terminal-input-line">
                   <span class="prompt">root@obsidiannull:~$</span>
                   <span class="terminal-cursor">_</span>
+                </div>
+                <!-- Mobile Terminal Controls -->
+                <div class="terminal-mobile-controls" aria-label="Mobile terminal input">
+                  <input type="text" id="terminalMobileInput" class="terminal-mobile-input" 
+                         inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false"
+                         placeholder="Type a command (e.g., help)" aria-label="Terminal command input">
+                  <button id="terminalMobileSend" class="btn-cyber primary" type="button" aria-label="Run command">
+                    Run
+                  </button>
                 </div>
               </div>
             </div>
