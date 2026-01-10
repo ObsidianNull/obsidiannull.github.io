@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Write-Up Viewer | ObsidianNull</title>
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .viewer-container { padding: 2rem 0; }
+    .viewer-article { background: var(--bg-secondary); border: var(--border-cyber); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-deep); }
+    .viewer-header h1 { margin-bottom: 0.25rem; }
+    .viewer-meta { color: var(--text-secondary); margin-bottom: 1rem; }
+    .viewer-actions { margin-top: 1rem; display:flex; justify-content: space-between; }
+    .viewer-actions a { text-decoration: none; color: var(--primary-blue); font-weight: 600; border: 1px solid var(--primary-blue); border-radius: 8px; padding: 0.4rem 0.7rem; }
+  </style>
+</head>
+<body>
+  <main class="container viewer-container">
+    <header class="section-header viewer-header">
+      <h1 class="section-title"><i class="fas fa-scroll"></i> <span id="viewerTitle">Write-Up</span></h1>
+      <p class="section-subtitle viewer-meta">Published: <span id="viewerDate"></span></p>
+    </header>
+
+    <article class="viewer-article" id="viewerContent">
+      <p>Loading write-up…</p>
+    </article>
+
+    <div class="viewer-actions">
+      <a class="read-more" href="../../index.html">← Back to Portfolio</a>
+      <a class="read-more" id="viewerSource" href="#" target="_blank" rel="noopener">View Raw</a>
+    </div>
+  </main>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+  <script src="https://kit.fontawesome.com/a2e0e6ad65.js" crossorigin="anonymous"></script>
+  <script>
+    (function(){
+      'use strict';
+      const params = new URLSearchParams(window.location.search);
+      const src = params.get('src');
+      const title = params.get('title') || 'Write-Up';
+      const date = params.get('date') || '';
+      const contentEl = document.getElementById('viewerContent');
+      const titleEl = document.getElementById('viewerTitle');
+      const dateEl = document.getElementById('viewerDate');
+      const sourceEl = document.getElementById('viewerSource');
+
+      titleEl.textContent = title;
+      dateEl.textContent = formatDate(date);
+
+      if (src) {
+        sourceEl.href = src;
+        fetch(src, { cache: 'no-cache' })
+          .then(r => { if(!r.ok) throw new Error('Failed to fetch markdown'); return r.text(); })
+          .then(md => {
+            const html = marked.parse(md, { mangle: false, headerIds: true });
+            const safe = DOMPurify.sanitize(html);
+            contentEl.innerHTML = safe;
+          })
+          .catch(err => {
+            console.error(err);
+            contentEl.innerHTML = '<p class="writeups-error">Unable to load this write-up.</p>';
+          });
+      } else {
+        contentEl.innerHTML = '<p class="writeups-error">No source specified.</p>';
+      }
+
+      function formatDate(iso){
+        if (!iso) return '';
+        const d = new Date(iso);
+        if (isNaN(d.getTime())) return iso;
+        const opts = { year: 'numeric', month: 'short', day: '2-digit' };
+        return d.toLocaleDateString(undefined, opts);
+      }
+    })();
+  </script>
+</body>
+</html>

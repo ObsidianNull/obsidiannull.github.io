@@ -1,0 +1,6 @@
+How to add new write-ups
+
+Create a Markdown file under writeups (e.g., my-post.md).
+Add an entry to index.json:
+title, date (YYYY-MM-DD), tags array, excerpt, url set to the .md path (e.g., resources/writeups/my-post.md).
+The Write-Ups section will auto-render a card linking to the viewer.

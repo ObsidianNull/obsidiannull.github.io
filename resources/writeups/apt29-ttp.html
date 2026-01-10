@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adversary Emulation: TTPs for APT29 | ObsidianNull</title>
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body style="background: var(--bg-primary); color: var(--text-primary);">
+  <main class="container" style="padding: 2rem 0;">
+    <header class="section-header" style="margin-bottom: 1rem;">
+      <h1 class="section-title"><i class="fas fa-scroll"></i> Adversary Emulation: TTPs for APT29</h1>
+      <p class="section-subtitle">Published: Jan 03, 2026 • Tags: Red Team, Threat Intel</p>
+    </header>
+
+    <article class="writeup-article" style="background: var(--bg-secondary); border: var(--border-cyber); border-radius: 12px; padding: 1.25rem; box-shadow: var(--shadow-deep);">
+      <h2>Objective</h2>
+      <p>Design a safe, controlled emulation plan for APT29 techniques to validate blue team detections without impacting production systems.</p>
+
+      <h2>Scope</h2>
+      <ul>
+        <li>Map techniques to <strong>MITRE ATT&CK</strong>: Initial Access, Defense Evasion, Exfiltration.</li>
+        <li>Establish <strong>guardrails</strong>: controlled hosts, non-destructive payloads, logging-only operations.</li>
+        <li>Define <strong>success criteria</strong>: alerts fired, correlation accuracy, false positive rate.</li>
+      </ul>
+
+      <h2>Technique Examples</h2>
+      <ol>
+        <li><strong>T1059 - Command and Scripting Interpreter</strong>: benign PowerShell beacon emitting logs for EDR validation.</li>
+        <li><strong>T1021 - Remote Services</strong>: simulated lateral movement events with locked-down credentials.</li>
+        <li><strong>T1041 - Exfiltration Over C2</strong>: mock data exfil to sinkhole endpoint; verify DLP/IDS triggers.</li>
+      </ol>
+
+      <h2>Detections & Telemetry</h2>
+      <p>Prioritize host EDR, Windows Event Logs (Sysmon), network IDS, and SIEM correlation. Build dashboards for rapid validation and RCA.</p>
+
+      <h2>Outcomes</h2>
+      <p>Runbooks updated with validated detections, improved triage flow, and documented false positives with tuning recommendations.</p>
+    </article>
+
+    <div style="margin-top: 1rem; display:flex; justify-content: space-between;">
+      <a class="read-more" href="../../index.html">← Back to Portfolio</a>
+      <a class="read-more" href="apt29-ttp.html">Top ↑</a>
+    </div>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a2e0e6ad65.js" crossorigin="anonymous"></script>
+</body>
+</html>

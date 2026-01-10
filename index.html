@@ -61,6 +61,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link" href="#about">Intel</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Arsenal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#writeups">Write-Ups</a></li>
           <li class="nav-item"><a class="nav-link" href="#certifications">Credentials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Comms</a></li>
           <li class="nav-item">
@@ -328,6 +329,24 @@
         <button class="filter-btn" data-filter="forensics">Forensics</button>
         <button class="filter-btn" data-filter="research">Research</button>
       </div>
+    </div>
+  </section>
+
+  <!-- Technical Write-Ups Section -->
+  <section id="writeups" class="writeups-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-scroll"></i>
+          Technical Write-Ups
+        </h2>
+        <p class="section-subtitle">Deep-dives into operations, TTPs, and lessons learned</p>
+      </div>
+
+      <div id="writeupsList" class="writeups-grid">
+        <!-- Populated dynamically by writeups.js -->
+      </div>
+      <div id="writeupsFilters" class="writeups-filters"></div>
     </div>
   </section>
 
@@ -619,6 +638,7 @@
   <script src="resources/javascript/intro.js"></script>
   <script src="resources/javascript/index.js"></script>
   <script src="resources/javascript/contact-validation-github.js"></script>
+  <script src="resources/javascript/writeups.js"></script>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

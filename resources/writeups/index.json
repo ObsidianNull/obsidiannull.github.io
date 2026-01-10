@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Adversary Emulation: TTPs for APT29",
+    "date": "2026-01-03",
+    "tags": ["red-team", "threat-intel"],
+    "excerpt": "Mapping MITRE ATT&CK techniques and designing a safe emulation for blue team validation.",
+    "url": "resources/writeups/apt29-ttp.md"
+  }
+]
