@@ -1,374 +1,231 @@
-# 🛡️ Celine Tannous - Cybersecurity Portfolio
+# 🛡️ ObsidianNull - Celine Tannous Cybersecurity Portfolio
 
 [![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-brightgreen)](https://obsidiannull.github.io)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Security](https://img.shields.io/badge/Security-Hardened-success)](docs/security.md)
+[![Live Site](https://img.shields.io/badge/Website-celinetannous.com-blue)](https://celinetannous.com)
 
-> **U.S. Navy Lieutenant | Cybersecurity Professional | Cyber Defense & Red Teaming Specialist**
+> **U.S. Navy Lieutenant | Nuclear Surface Warfare Officer | Cybersecurity Professional**  
+> *Hard Systems. Harder Standards.*
 
-A modern, responsive portfolio website showcasing cybersecurity expertise, military experience, and technical skills. Built with security best practices and deployed on GitHub Pages.
+A modern, responsive cybersecurity portfolio website featuring an interactive terminal interface, cyber-themed design, and secure contact form. Built with Bootstrap 4 and vanilla JavaScript, demonstrating security-first development practices.
 
 ## 🚀 Live Demo
 
-**Website:** [https://celinetannous.com](https://celinetannous.com)
-**Fallback:** [https://obsidiannull.github.io](https://obsidiannull.github.io)
+**Primary:** [https://celinetannous.com](https://celinetannous.com)  
+**GitHub Pages:** [https://obsidiannull.github.io](https://obsidiannull.github.io)
 
 ## 📋 Table of Contents
 
 - [Features](#-features)
 - [Technology Stack](#-technology-stack)
-- [Security Features](#️-security-features)
 - [Project Structure](#-project-structure)
-- [Installation & Setup](#-installation--setup)
+- [Quick Start](#-quick-start)
 - [Contact Form Configuration](#-contact-form-configuration)
-- [Deployment](#-deployment)
 - [Customization](#-customization)
-- [Performance](#-performance)
-- [License](#-license)
+- [Security Features](#️-security-features)
+- [Adding Writeups](#-adding-writeups)
+- [Deployment](#-deployment)
 - [Contact](#-contact)
+- [License](#-license)
 
 ## ✨ Features
 
 ### 🎨 **Design & User Experience**
+- **Cyber Aesthetic**: Dark obsidian/neon-blue theme with custom CSS variables
+- **Fully Responsive**: Bootstrap 4.3.1 grid system for mobile-first design
+- **Fullscreen Intro Animation**: Session-gated splash screen with logo (skip with `?intro=1`)
+- **Smooth Section Navigation**: Full-viewport sections with scroll-snap behavior
+- **Typography**: Inter for UI elements, JetBrains Mono for terminal/code
+- **Custom Icons**: Font Awesome 6.4.0 integration
 
-- **Responsive Design**: Bootstrap 4.3.1 grid and components
-- **Cyber Aesthetic**: Obsidian/neon-blue palette driven by CSS variables
-- **Fullscreen Intro**: Session-gated splash with quick fade; override via `?intro=1`
-- **Smooth Sections**: Full-viewport sections with CSS scroll-snap
-- **Typography**: Inter (UI) + JetBrains Mono (terminal/intro)
+### 🖥️ **Interactive Terminal**
+- **Hero Terminal Window**: Desktop & mobile-responsive terminal interface
+- **Document-Level Commands**: Type 'T' on desktop or tap on mobile to activate
+- **Command System**: Built-in commands (help, about, skills, projects, contact, clear, matrix)
+- **Matrix Rain Effect**: Optional easter egg animation in theme colors
+- **Mobile Input Controls**: Touch-friendly command input with dedicated "Run" button
 
-### 📱 **Navigation & Layout**
-
-- **Fixed Navigation**: Persistent navbar with brand logo
-- **Section Snapping**: Smooth transitions between full-viewport sections
-- **Hero Terminal**: Terminal component positioned alongside hero content on desktop
-- **Scroll Enhancements**: Smooth scrolling and intersection-based fade-ins
-
-### 🖥️ **Terminal & Interactions**
-
-- **Interactive Terminal**: Document-level command input (help, about, skills, projects, contact, etc.)
-- **Type/Matrix Easter Egg**: Optional matrix rain effect using theme colors
-- **No Visible Input**: Clean terminal UI with prompt and output only
-
-### 🛡️ **Security-First Contact Form**
-
-- **Input Validation**: Real-time client-side validation with regex patterns
-- **XSS Protection**: HTML/script tag filtering and sanitization
-- **SQL Injection Prevention**: Pattern detection and blocking
-- **Bot Protection**: Honeypot field for automated bot detection
-- **Rate Limiting**: Built-in EmailJS rate limiting (200 emails/month)
-- **Error Handling**: Graceful fallback messages and error recovery
-
-### 📧 **Contact Integration**
-
-- **EmailJS Integration**: Serverless email via `resources/javascript/contact-validation-github.js`
-- **Validation**: Real-time checks, sanitization, and honeypot bot trap
-- **UX Feedback**: Character counter, loading state, and clear success/error messages
+### 📧 **Secure Contact Form**
+- **EmailJS Integration**: Serverless email delivery via [contact-validation-github.js](resources/javascript/contact-validation-github.js)
+- **Real-Time Validation**: Client-side input validation with regex patterns
+- **Security Features**:
+  - XSS protection with HTML/script tag filtering
+  - SQL injection pattern detection
+  - Honeypot field for bot protection
+  - Character limits and sanitization
+- **UX Feedback**: Live character counter, loading states, success/error messages
 
 ## 🔧 Technology Stack
 
 ### **Frontend**
-
 - **HTML5**: Semantic markup with accessibility features
-- **CSS3**: Custom properties, flexbox, grid, and animations
-- **JavaScript ES6+**: Modern async/await, classes, and modules
-- **Bootstrap 4.3.1**: Responsive framework and components
-- **Font Awesome 5.15.4**: Icon library for social media and UI elements
+- **CSS3**: Custom properties (CSS variables), flexbox, animations
+- **JavaScript ES6+**: Vanilla JS with async/await, event handling
+- **Bootstrap 4.3.1**: Responsive grid and components (local installation)
+- **Font Awesome 6.4.0**: Icon library (CDN)
+- **Google Fonts**: Inter (UI), JetBrains Mono (terminal)
 
 ### **Libraries & Services**
+- **jQuery 3.6.3**: DOM manipulation (local)
+- **EmailJS 3.x**: Client-side email service for contact form (CDN)
+- **GitHub Pages**: Static site hosting with custom domain
 
-- **jQuery 3.6.3**: DOM manipulation and event handling
-- **EmailJS**: Client-side email service for contact form
-- **GitHub Pages**: Static site hosting and deployment
+### **Key Files**
+- `index.html` - Main single-page application (647 lines)
+- `resources/css/index.css` - Primary stylesheet
+- `resources/javascript/index.js` - Core interactions and terminal
+- `resources/javascript/intro.js` - Splash screen logic
+- `resources/javascript/contact-validation-github.js` - Form validation & EmailJS
+- `resources/javascript/writeups.js` - Dynamic writeup loading
+- `resources/writeups/index.json` - Writeup metadata
 
-### **Development Tools**
+## � Project Structure
 
-- **VS Code**: Primary development environment
-- **Git**: Version control and collaboration
-- **GitHub Actions**: Automated deployment pipeline
-- **Markdown**: Documentation and guides
-
-## 🛡️ Security Features
-
-This portfolio demonstrates cybersecurity expertise through implemented security measures:
-
-### **Input Validation & Sanitization**
-
-```javascript
-// Example: Name validation with security patterns
-validateName(name) {
-    const nameRegex = /^[a-zA-Z\s\-\'\.]{2,100}$/;
-    return nameRegex.test(name) && !this.containsSuspiciousContent(name);
-}
 ```
-
-### **Attack Vector Protection**
-
-- ✅ **Cross-Site Scripting (XSS)**: Script tag filtering and content sanitization
-- ✅ **SQL Injection**: Pattern detection for malicious database queries
-- ✅ **HTML Injection**: Removal of dangerous HTML tags and attributes
-- ✅ **JavaScript Injection**: Blocking of JavaScript protocols and event handlers
-- ✅ **Bot Attacks**: Honeypot field and behavioral analysis
-- ✅ **Content Security**: Validation of file uploads and content types
-
-### **Security Headers & Best Practices**
-
-- **Content Security Policy**: Implemented via GitHub Pages
-- **HTTPS Enforced**: Secure communication protocols
-- **Input Sanitization**: Multi-layer validation and cleaning
-- **Error Handling**: Secure error messages without information disclosure
-
-## 📁 Project Structure
-
-```text
 obsidiannull.github.io/
-├── index.html                         # Main portfolio page
-├── README.md                          # Documentation (this file)
+├── index.html                          # Main application (647 lines)
+├── index-backup.html                   # Backup version
+├── README.md                           # Project documentation
+├── CNAME                               # Custom domain: celinetannous.com
 ├── EMAIL_SETUP_GUIDE.md               # EmailJS configuration guide
-├── CNAME                              # Custom domain (celinetannous.com)
-├── .github/
-│   └── workflows/
-│       └── deploy.yml                 # GitHub Pages deployment workflow
 └── resources/
-  ├── css/
-  │   ├── index.css                  # Theme, components, animations
-  │   └── index-backup.css           # Backup stylesheet
-  ├── javascript/
-  │   ├── index.js                   # Main site logic (nav, terminal, effects)
-  │   ├── intro.js                   # Intro/splash lifecycle
-  │   ├── contact-validation-github.js # Contact form validation + EmailJS
-  │   └── index-backup.js            # Backup script
-  ├── images/
-  │   ├── logojpg.jpg                # Splash/branding image
-  │   ├── logopng.png                # Navbar brand logo
-  │   ├── comptia-security-plus.png  # Security+ badge
-  │   ├── CompTIA Security+ ce certificate.pdf # Security+ certificate (PDF)
-  │   └── coming-soon.jpg            # Placeholder asset
-  ├── bootstrap-4.3.1-dist/          # Local Bootstrap build
-  └── jQuery/                        # jQuery 3.6.3
+    ├── bootstrap-4.3.1-dist/          # Bootstrap framework (local)
+    │   ├── css/                        # Bootstrap CSS files
+    │   └── js/                         # Bootstrap JS bundle
+    ├── css/
+    │   ├── index.css                   # Main stylesheet
+    │   └── index-backup.css            # Backup stylesheet
+    ├── images/
+    │   ├── logojpg.jpg                 # Intro logo
+    │   ├── logopng.png                 # Nav brand logo
+    │   ├── uniformpic.jpeg             # Profile photo
+    │   ├── comptia-security-plus.png   # Certification badge
+    │   └── CompTIA Security+ ce certificate.pdf
+    ├── javascript/
+    │   ├── index.js                    # Core interactions & terminal
+    │   ├── intro.js                    # Splash screen logic
+    │   ├── contact-validation-github.js # Form validation & EmailJS
+    │   ├── writeups.js                 # Dynamic writeup loader
+    │   ├── index-backup.js             # Backup JS
+    │   └── contact-validation-github.js # Form security
+    ├── jQuery/
+    │   └── jquery-3.6.3.min.js        # jQuery library (local)
+    └── writeups/
+        ├── index.json                  # Writeup metadata
+        ├── apt29-ttp.md               # APT29 TTP analysis
+        ├── apt29-ttp.html             # HTML version
+        ├── view.html                   # Writeup viewer template
+        └── info.txt                    # Notes
 ```
-
-## 🚀 Installation & Setup
+## 🚀 Quick Start
 
 ### **Prerequisites**
-
-- Git installed on your system
+- Git
+- Modern web browser
 - Code editor (VS Code recommended)
-- Modern web browser for testing
+- Optional: Live Server extension for local development
 
-### **Quick Start**
+### **Local Setup**
 
 ```bash
 # Clone the repository
 git clone https://github.com/ObsidianNull/obsidiannull.github.io.git
-
-# Navigate to the project directory
 cd obsidiannull.github.io
 
-# Open in your preferred code editor
-code .
-
-# Open index.html in a browser or use a local server
-# For VS Code: Install "Live Server" extension and right-click index.html
+# Open in browser (or use Live Server in VS Code)
+open index.html
 ```
 
-### **Local Development**
-
-1. **Install Live Server** (VS Code extension) for hot reloading
-2. **Open index.html** with Live Server for real-time preview
-3. **Edit files** and see changes instantly in the browser
-4. **Test responsiveness** using browser dev tools
+The site will work immediately - all dependencies (Bootstrap, jQuery) are included locally.
 
 ## 📧 Contact Form Configuration
 
-The contact form uses EmailJS for serverless email functionality. Follow these steps:
+The contact form uses [EmailJS](https://www.emailjs.com/) for serverless email delivery. See [EMAIL_SETUP_GUIDE.md](EMAIL_SETUP_GUIDE.md) for detailed setup instructions.
 
-### **1. EmailJS Account Setup**
-
-1. Create account at [EmailJS.com](https://www.emailjs.com/)
-2. Configure email service (Gmail recommended)
-3. Create email template with variables
-4. Get Service ID, Template ID, and Public Key
-
-### **2. Update Configuration**
-
-Edit `resources/javascript/contact-validation-github.js`:
-
-```javascript
-this.emailJSConfig = {
-    serviceID: 'your_service_id',      // From EmailJS dashboard
-    templateID: 'your_template_id',    // From email template
-    publicKey: 'your_public_key'       // From account settings
-};
-```
-
-### **3. Email Template Variables**
-
-Use these variables in your EmailJS template:
-
-- `{{from_name}}` - Sender's name
-- `{{from_email}}` - Sender's email
-- `{{message}}` - Message content
-- `{{to_email}}` - Your email address
-
-📖 **Detailed Guide**: See [EMAIL_SETUP_GUIDE.md](EMAIL_SETUP_GUIDE.md) for complete instructions.
-
-## 🌐 Deployment
-
-### **GitHub Pages (Recommended)**
-
-1. **Enable Pages**: Repository Settings → Pages → Deploy from branch
-2. **Configure Domain**: Add CNAME file for custom domain (optional)
-3. **Auto-Deploy**: GitHub Actions handles automatic deployment
-4. **SSL Certificate**: GitHub provides HTTPS automatically
-
-### **Custom Domain Setup**
-
-```bash
-# Add your domain to CNAME file
-echo "yourdomain.com" > CNAME
-git add CNAME
-git commit -m "Add custom domain"
-git push origin main
-```
-
-### **Alternative Hosting**
-
-- **Netlify**: Drag & drop deployment with form handling
-- **Vercel**: Zero-config deployment with preview URLs
-- **Firebase Hosting**: Google's hosting with CDN
+**Quick Setup:**
+1. Create an EmailJS account
+2. Create an email template
+3. Get your Service ID, Template ID, and Public Key
+4. Update credentials in [contact-validation-github.js](resources/javascript/contact-validation-github.js)
 
 ## 🎨 Customization
 
-### **Color Theme**
-
-Edit CSS custom properties in `resources/css/index.css`:
+### **Styling**
+All visual customization is in [resources/css/index.css](resources/css/index.css):
 
 ```css
 :root {
-  /* Accents */
-  --primary-blue: #00E5FF;   /* Neon cyan */
-  --primary-green: #1FA2FF;  /* Electric blue */
-  --primary-red: #FF4D4D;    /* Warnings */
-
-  /* Surfaces */
-  --bg-primary: #050B1A;     /* Obsidian navy */
-  --bg-secondary: #0B1E3A;   /* Midnight blue */
-  --bg-tertiary: #112B4D;    /* Deep steel blue */
-
-  /* Text */
-  --text-primary: #EAF6FF;   /* Ice white */
-  --text-secondary: #8FAFC6; /* Muted steel */
+  --primary-blue: #00E5FF;      /* Neon cyan accent */
+  --primary-green: #1FA2FF;     /* Electric blue */
+  --primary-red: #FF4D4D;       /* Warnings */
+  --bg-primary: #050B1A;        /* Obsidian navy background */
+  --bg-secondary: #0B1E3A;      /* Midnight blue */
+  --text-primary: #EAF6FF;      /* Ice white text */
 }
 ```
 
 ### **Content Updates**
+- **Personal Info**: Edit [index.html](index.html) sections (hero, about, contact)
+- **Projects**: Update project cards in the "Cyber Arsenal" section
+- **Certifications**: Modify credential cards with your certifications
+- **Writeups**: Add writeups to [resources/writeups/index.json](resources/writeups/index.json)
+- **Images**: Replace files in [resources/images/](resources/images/)
 
-- **Personal Info**: Update name, title, and bio in `index.html`
-- **Images**: Replace photos in `resources/images/`
-- **Projects**: Add project cards with links and descriptions
-- **Skills**: Update technology skills and certifications
-- **Social Links**: Modify social media profiles
+### **Terminal Commands**
+Add custom terminal commands in [resources/javascript/index.js](resources/javascript/index.js) in the `processCommand()` function.
 
-### **Typography**
+## 🛡️ Security Features
 
-- UI: Inter
-- Terminal/Intro/Code: JetBrains Mono
+The contact form implements multiple security layers:
 
-## ⚡ Performance
+- ✅ **XSS Protection**: HTML/script tag filtering and sanitization
+- ✅ **SQL Injection Prevention**: Pattern detection and blocking
+- ✅ **Bot Protection**: Honeypot field (invisible to users)
+- ✅ **Input Validation**: Regex patterns for name, email, subject, message
+- ✅ **Character Limits**: Enforced on all fields
+- ✅ **Rate Limiting**: EmailJS built-in protection (200 emails/month free tier)
 
-### **Optimization Features**
+All validation logic is in [contact-validation-github.js](resources/javascript/contact-validation-github.js).
 
-- **Minified Assets**: Compressed CSS and JavaScript
-- **Optimized Images**: WebP format with fallbacks
-- **CSS Grid/Flexbox**: Modern layout without heavy frameworks
-- **Lazy Loading**: Images load as needed
-- **CDN Delivery**: Fast content delivery via GitHub Pages
+## 📝 Adding Writeups
 
-### **Performance Metrics**
+1. Create your writeup in Markdown format in [resources/writeups/](resources/writeups/)
+2. Add metadata to [resources/writeups/index.json](resources/writeups/index.json):
 
-- **Lighthouse Score**: 95+ across all categories
-- **Page Load Time**: <2 seconds on 3G
-- **Bundle Size**: <500KB total assets
-- **Core Web Vitals**: Optimized for Google's performance standards
-
-### **Monitoring**
-
-```bash
-# Check performance with Lighthouse
-npx lighthouse https://obsidiannull.github.io
-
-# Analyze bundle size
-npx bundlesize
+```json
+{
+  "title": "Your Writeup Title",
+  "date": "2026-01-18",
+  "tags": ["red-team", "forensics"],
+  "excerpt": "Brief description...",
+  "url": "resources/writeups/your-writeup.md"
+}
 ```
 
-## 🔐 Security Considerations
+3. The writeup will automatically appear in the "Write-Ups" section
 
-### **Production Security**
+## 🚀 Deployment
 
-- **HTTPS Enforced**: All traffic encrypted in transit
-- **Content Validation**: Server-side validation for critical data
-- **Error Handling**: No sensitive information in error messages
-- **Rate Limiting**: Prevents abuse of contact form
+The site is configured for GitHub Pages with a custom domain:
 
-### **Development Security**
+1. **GitHub Pages Settings**: Enable in repository settings
+2. **Custom Domain**: CNAME file contains `celinetannous.com`
+3. **SSL/TLS**: Automatic HTTPS via GitHub Pages
+4. **Deployment**: Automatic on push to `main` branch
 
-- **No Secrets in Code**: Public keys only, no private credentials
-- **Input Sanitization**: Multi-layer cleaning and validation
-- **XSS Prevention**: Content Security Policy implementation
-- **Regular Updates**: Dependencies monitored for vulnerabilities
+No build process required - it's a static site that deploys directly.
 
-## 📊 Analytics & Monitoring
+## 📧 Contact
 
-### **Recommended Tools**
-
-- **Google Analytics**: User behavior and traffic analysis
-- **GitHub Insights**: Repository activity and deployment status
-- **Uptime Monitoring**: Site availability tracking
-- **Performance Monitoring**: Core Web Vitals tracking
-
-## 🤝 Contributing
-
-While this is a personal portfolio, feedback and suggestions are welcome:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/improvement`)
-3. **Commit** your changes (`git commit -am 'Add improvement'`)
-4. **Push** to the branch (`git push origin feature/improvement`)
-5. **Create** a Pull Request
+- **Email**: obsidiannullsec@gmail.com
+- **Phone**: +1 (720) 318-3311
+- **LinkedIn**: [celine-tannous-34a44a1a7](https://linkedin.com/in/celine-tannous-34a44a1a7)
+- **GitHub**: [@ObsidianNull](https://github.com/ObsidianNull)
+- **X**: [@ObsidianNull](https://x.com/ObsidianNull)
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🏆 Acknowledgments
-
-- **U.S. Naval Academy**: Cyber Operations program foundation
-- **Bootstrap Team**: Responsive framework
-- **EmailJS**: Serverless email solution
-- **Font Awesome**: Icon library
-- **GitHub**: Hosting and version control
+This project is personal portfolio of Celine Tannous. All rights reserved.
 
 ---
 
-## 📞 Contact
-
-**LT Celine Tannous**  
-🏛️ U.S. Navy Lieutenant  
-🛡️ Cybersecurity Professional  
-🔍 @ObsidianNull  
-
-📧 **Email**: [obsidiannullsec@gmail.com](mailto:obsidiannullsec@gmail.com)  
-📱 **Phone**: +1 (720) 318-3311  
-🌐 **Portfolio**: [https://obsidiannull.github.io](https://obsidiannull.github.io)  
-💼 **LinkedIn**: [linkedin.com/in/celine-tannous-34a44a1a7](https://linkedin.com/in/celine-tannous-34a44a1a7)  
-🐱 **GitHub**: [github.com/ObsidianNull](https://github.com/ObsidianNull)  
-🐦 **Twitter/X**: [@ObsidianNull](https://x.com/ObsidianNull)  
-🎯 **TryHackMe**: [tryhackme.com/r/p/ObsidianNull](https://tryhackme.com/r/p/ObsidianNull)  
-
----
-
-> "Defending the Digital Domain — From Mission to Innovation"
-
-**Last Updated**: January 3, 2026  
-**Created**: August 12, 2022
+*Hard Systems. Harder Standards.* 🛡️
