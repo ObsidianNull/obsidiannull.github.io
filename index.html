@@ -1,654 +1,475 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
-  <meta name="description" content="ObsidianNull - LT Celine Tannous | Cybersecurity Professional | Red Team Specialist | Military Leader"/>
-  <title>ObsidianNull | Celine Tannous - Cybersecurity Arsenal</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Celine Tannous is a U.S. Navy Lieutenant transitioning into cybersecurity, with hands-on portfolio work in detection engineering, SIEM, incident response, vulnerability management, and security operations.">
+  <meta name="keywords" content="cybersecurity engineer portfolio, detection engineer, SOC analyst, blue team, incident response, vulnerability management, security operations, Celine Tannous">
+  <meta name="author" content="Celine Tannous">
+  <meta property="og:title" content="Celine Tannous | Cybersecurity Portfolio">
+  <meta property="og:description" content="Military leadership, hands-on cyber portfolio work, and a clear path into security engineering, detection engineering, SOC, and blue-team roles.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="resources/images/uniformpic.jpeg">
+  <meta name="theme-color" content="#0a1020">
+  <link rel="canonical" href="https://celinetannous.com/">
+  <title>Celine Tannous | Cybersecurity Engineer Portfolio</title>
 
-  <!-- Bootstrap (local) -->
-  <link rel="stylesheet" href="resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-
-  <!-- Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="resources/css/recruiter-portfolio.css">
 
-  <!-- Fonts: Inter (UI) + JetBrains Mono (terminal/code) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- EmailJS for GitHub Pages contact form -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-  <script>
-    try {
-      const params = new URLSearchParams(location.search);
-      if (params.get('intro') === '1') {
-        try { sessionStorage.removeItem('introSeen'); } catch (e) {}
-        document.documentElement.classList.remove('skip-intro');
-      } else if (sessionStorage.getItem('introSeen') === '1') {
-        document.documentElement.classList.add('skip-intro');
-      }
-    } catch (e) { /* ignore storage errors */ }
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Celine Tannous",
+      "alternateName": "ObsidianNull",
+      "jobTitle": "U.S. Navy Lieutenant transitioning into cybersecurity",
+      "url": "https://obsidiannull.github.io",
+      "sameAs": [
+        "https://github.com/ObsidianNull",
+        "https://linkedin.com/in/celine-tannous-34a44a1a7"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "United States Naval Academy"
+      },
+      "knowsAbout": [
+        "Cybersecurity",
+        "Detection Engineering",
+        "Security Operations",
+        "Incident Response",
+        "Vulnerability Management",
+        "Blue Team Operations"
+      ]
+    }
   </script>
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="resources/css/index.css">
 </head>
-
 <body>
-  <!-- Intro Loading Animation -->
-  <div class="intro">
-    <div class="intro-content">
-      <img src="resources/images/logojpg.jpg" alt="ObsidianNull Logo" class="intro-logo" loading="eager" decoding="async">
-    </div>
-  </div>
-
-  <!-- Main Navigation -->
-  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top cyber-nav">
-    <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="resources/images/logopng.png" alt="ObsidianNull Logo" class="brand-logo" loading="eager" decoding="async">
-        <span class="brand-null">ObsidianNull</span>
+  <header class="site-header">
+    <div class="container-shell nav-wrap">
+      <a class="brand" href="#home" aria-label="Go to homepage">
+        <span class="brand-mark">CT</span>
+        <span class="brand-copy">
+          <strong>Celine Tannous</strong>
+          <span>ObsidianNull • Cybersecurity Portfolio</span>
+        </span>
       </a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
-        <div class="cyber-burger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Open navigation">
+        <i class="fas fa-bars"></i>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">Intel</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Arsenal</a></li>
-          <li class="nav-item"><a class="nav-link" href="#writeups">Write-Ups</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Credentials</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Comms</a></li>
-          <li class="nav-item">
-            <a class="nav-link resume-btn" href="resources/images/Celine Tannous Resume.pdf" target="_blank">
-              <i class="fas fa-download"></i> Extract Resume
-            </a>
-          </li>
+      <nav>
+        <ul id="navLinks" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#credentials">Credentials</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a class="button-ghost" href="https://linkedin.com/in/celine-tannous-34a44a1a7" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button-primary" href="resources/images/Celine%20Tannous%20Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <div class="hero-matrix"></div>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="hero-content">
-            <div class="rank-badge">
-              <span class="rank-insignia">
-                <span class="rank-bar"></span>
-                <span class="rank-bar"></span>
-              </span>
-              <span>U.S. Navy Lieutenant</span>
+  <main>
+    <section id="home" class="hero section">
+      <div class="container-shell hero-grid">
+        <div class="hero-copy reveal">
+          <span class="kicker"><i class="fas fa-shield-halved"></i> U.S. Navy Lieutenant transitioning into cybersecurity</span>
+          <h1>Celine Tannous combines high-reliability leadership with hands-on defensive cyber work.</h1>
+          <p class="hero-lead">I’m a Surface Warfare and Nuclear Officer with a Cyber Operations degree, an active TS/SCI clearance, and a hands-on home-lab portfolio spanning detection engineering, SIEM, vulnerability management, incident response, network analysis, and Windows hardening.</p>
+
+          <div class="hero-actions">
+            <a class="button-primary" href="#projects">View Projects</a>
+            <a class="button-secondary" href="resources/images/Celine%20Tannous%20Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="button-ghost" href="#contact">Contact</a>
+          </div>
+
+          <p class="muted"><strong>Background:</strong> My experience in mission-critical Navy environments shaped how I approach security work: with discipline, accountability, technical curiosity, and a strong focus on reliability.</p>
+
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Areas of focus</strong>
+              <span>Cybersecurity Engineering • Detection Engineering • SOC / Blue Team • Security Operations</span>
             </div>
-            <h1 class="hero-title">
-              <span class="title-line">Celine Tannous</span>
-              <span class="handle-line">@ObsidianNull</span>
-            </h1>
-            <div class="hero-tags">
-              <span class="tag cyber-defense">Cyber Defense</span>
-              <span class="tag leadership">Military Leadership</span>
-              <span class="tag red-team">Red Team Enthusiast</span>
+            <div class="hero-point">
+              <strong>Availability</strong>
+              <span>Seeking full-time cybersecurity opportunities starting Winter 2026 / early 2027.</span>
             </div>
-            <p class="hero-description">
-              I’m a Nuclear Surface Warfare Officer with a background in cyber operations. I’ve led technical teams in high-risk, mission-critical environments, served as a shipboard Cyber Officer, and managed complex systems where reliability and security are non-negotiable. My work bridges operational leadership and hands-on technical expertise, with a focus on cybersecurity, risk management, and resilient systems.
-            </p>
-            <div class="hero-actions">
-              <a href="#projects" class="btn-cyber primary">Explore Arsenal</a>
-              <a href="#contact" class="btn-cyber secondary">Establish Comms</a>
+            <div class="hero-point">
+              <strong>Proof of work</strong>
+              <span>GitHub-based lab projects, detections, write-ups, and defensive validation work.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Core strengths</strong>
+              <span>Leadership, disciplined execution, security ownership, and technical curiosity.</span>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="hero-visual">
-            <div class="terminal-window">
-              <div class="terminal-header">
-                <div class="terminal-buttons">
-                  <span class="btn-red"></span>
-                  <span class="btn-yellow"></span>
-                  <span class="btn-green"></span>
+
+        <aside class="hero-panel reveal">
+          <div class="profile-shot">
+            <img src="resources/images/uniformpic.jpeg" alt="Portrait of Celine Tannous">
+          </div>
+
+          <div class="panel-block">
+            <h3>At a glance</h3>
+            <div class="pill-row">
+              <span class="pill success">Active TS/SCI</span>
+              <span class="pill">CompTIA Security+</span>
+              <span class="pill warning">PenTest+ in progress</span>
+              <span class="pill warning">CySA+ in progress</span>
+            </div>
+          </div>
+
+          <div class="panel-block">
+            <h4>How I work</h4>
+            <ul class="clean-list">
+              <li>Security ownership in high-consequence environments</li>
+              <li>Hands-on practice with Splunk, Wazuh, Sysmon, Nessus, Wireshark, VMware, and Active Directory</li>
+              <li>Leadership of technical teams, training pipelines, and repeatable processes</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="quick-proof section">
+      <div class="container-shell proof-grid reveal">
+        <div class="proof-stat hero-copy">
+          <strong>20-person leadership</strong>
+          <span>Led a technical division responsible for critical electrical systems.</span>
+        </div>
+        <div class="proof-stat hero-copy">
+          <strong>Cyber Operations degree</strong>
+          <span>B.S. with Honors Program and Merit from the U.S. Naval Academy.</span>
+        </div>
+        <div class="proof-stat hero-copy">
+          <strong>Shipboard cyber ownership</strong>
+          <span>Managed network security posture and remediation alignment to DoD standards.</span>
+        </div>
+        <div class="proof-stat hero-copy">
+          <strong>Documented lab portfolio</strong>
+          <span>Detection, hardening, investigation, and vulnerability management projects.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>About</h2>
+          <p>My path into cybersecurity is grounded in a simple idea: the same discipline required to lead in high-consequence environments also matters in security work done well.</p>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card reveal">
+            <h3>Who I am</h3>
+            <p class="muted">I am a U.S. Navy Lieutenant and Cyber Operations graduate transitioning into civilian cybersecurity. My background combines operational leadership, technical training, and a strong bias toward preparation, reliability, and accountability.</p>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>What I’ve worked on</h3>
+            <p class="muted">I’ve owned shipboard cybersecurity responsibilities, led a 20-person technical division in a nuclear environment, and built hands-on cyber projects focused on detection, monitoring, hardening, and response.</p>
+          </article>
+
+          <article class="info-card reveal">
+            <h3>How I approach the work</h3>
+            <p class="muted">I value clear documentation, calm troubleshooting, steady follow-through, and continuous learning. That mindset connects my military experience with the security work I’m building toward now.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Experience</h2>
+          <p>Across these roles, the common thread has been ownership, technical leadership, structured problem-solving, and steady execution in environments where reliability matters.</p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <div class="meta-line">
+              <strong>Cyber Officer — USS Harpers Ferry (LSD-49)</strong>
+              <span>2021–Present</span>
+            </div>
+            <p class="card-summary">Owned cybersecurity posture for operational shipboard networks supporting mission-critical systems.</p>
+            <ul class="clean-list">
+              <li>Identified vulnerabilities and assessed risk against DoD cybersecurity requirements.</li>
+              <li>Coordinated remediation efforts and reinforced security controls across networked systems.</li>
+              <li>Delivered cybersecurity training to improve organizational awareness and security discipline.</li>
+              <li>Brought an incident-response mindset to operational systems where uptime and resilience matter.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="meta-line">
+              <strong>Reactor Electrical Division Officer — USS Carl Vinson (CVN-70)</strong>
+              <span>2021–Present</span>
+            </div>
+            <p class="card-summary">Led a 20-person technical division responsible for nuclear propulsion electrical systems.</p>
+            <ul class="clean-list">
+              <li>Managed fault isolation, redundancy, and casualty response in time-critical conditions.</li>
+              <li>Improved qualification rates and system reliability through structured training programs.</li>
+              <li>Led cross-functional execution where safety, precision, and accountability were non-negotiable.</li>
+              <li>Built team habits around technical rigor, procedural compliance, and calm troubleshooting.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="meta-line">
+              <strong>Cyber Analyst Intern — General Electric Aviation</strong>
+              <span>Earlier experience</span>
+            </div>
+            <p class="card-summary">Supported threat identification and email analysis in a real-world enterprise setting.</p>
+            <ul class="clean-list">
+              <li>Performed IOC research to support identification of malicious activity and emerging threats.</li>
+              <li>Reviewed emails for phishing, malware, or compromise and escalated confirmed issues.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="meta-line">
+              <strong>Cyber / Research Intern — Johns Hopkins University Applied Physics Laboratory</strong>
+              <span>Earlier experience</span>
+            </div>
+            <p class="card-summary">Contributed to applied cybersecurity research and technical analysis for national security systems.</p>
+            <ul class="clean-list">
+              <li>Assisted with scripting, technical analysis, and documentation.</li>
+              <li>Worked in a research environment that emphasized accuracy, clarity, and disciplined execution.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Projects</h2>
+          <p>These projects come from documented lab work and hands-on defensive practice, with a focus on monitoring, hardening, investigation, and detection.</p>
+        </div>
+
+        <div class="project-grid single-project-grid">
+          <article class="project-card reveal">
+            <h3>Detection Engineering Lab</h3>
+            <p class="card-summary">Built a VMware-based Active Directory lab with centralized telemetry and custom detections for common attacker behavior.</p>
+            <ul class="clean-list">
+              <li>Instrumented a Windows domain environment to collect and review host telemetry through Sysmon and Wazuh.</li>
+              <li>Created detections for PowerShell abuse, scheduled task persistence, and SMB lateral movement.</li>
+              <li>Validated alerts against realistic lab activity and tuned them to improve signal quality.</li>
+              <li>Used the environment to practice investigation workflows, documentation, and defensive analysis.</li>
+            </ul>
+            <div class="meta-block"><strong>Tools used</strong><span>VMware, Active Directory, Sysmon, Wazuh, Windows Event Logs</span></div>
+            <div class="meta-block"><strong>Skills demonstrated</strong><span>Detection engineering, telemetry pipeline design, rule tuning, validation, triage</span></div>
+            <div class="meta-block"><strong>Why it matters</strong><p>This project reflects the kind of practical monitoring and detection work that supports security operations and blue-team environments.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visual-proof" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Project visuals</h2>
+          <p>These visuals give a clearer view of the lab environment, telemetry flow, and the type of evidence behind the portfolio work.</p>
+        </div>
+
+        <div class="visual-proof-grid">
+          <figure class="visual-card reveal">
+            <img class="diagram-image" src="resources/images/lab-architecture.svg" alt="Diagram of the enterprise cybersecurity home lab environment">
+            <figcaption>
+              <strong>Home lab architecture</strong>
+              <p class="muted">A VMware-based enterprise-style lab with Active Directory, Windows endpoints, Linux, Splunk, pfSense, and Wazuh.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="visual-card reveal">
+            <img class="diagram-image" src="resources/images/detection-pipeline.svg" alt="Diagram of the detection engineering telemetry and alert pipeline">
+            <figcaption>
+              <strong>Detection pipeline</strong>
+              <p class="muted">Sysmon telemetry flows into Wazuh and custom rules are validated against realistic test activity for triage and tuning.</p>
+            </figcaption>
+          </figure>
+
+          <article class="visual-card visual-card-wide reveal">
+            <div class="screen-placeholder">
+              <div class="screen-placeholder-bar">
+                <span></span><span></span><span></span>
+                <strong>Useful screenshots to include</strong>
+              </div>
+              <div class="screen-placeholder-body">
+                <div class="screen-tile">
+                  <h4>Splunk dashboard view</h4>
+                  <p>Best for showing search workflows, alert context, and analyst visibility.</p>
                 </div>
-                <span class="terminal-title">Terminal</span>
-                <span class="terminal-hint">Tap on mobile; press T on desktop</span>
-              </div>
-              <div class="terminal-body" id="terminalContent">
-                <div class="output" id="terminalOutput"></div>
-                <div class="terminal-input-line">
-                  <span class="prompt">root@obsidiannull:~$</span>
-                  <span class="terminal-cursor">_</span>
+                <div class="screen-tile">
+                  <h4>Wazuh alert triage</h4>
+                  <p>Best for showing detections tied to PowerShell abuse, scheduled tasks, and SMB movement.</p>
                 </div>
-                <!-- Mobile Terminal Controls -->
-                <div class="terminal-mobile-controls" aria-label="Mobile terminal input">
-                  <input type="text" id="terminalMobileInput" class="terminal-mobile-input" 
-                         inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false"
-                         placeholder="Type a command (e.g., help)" aria-label="Terminal command input">
-                  <button id="terminalMobileSend" class="btn-cyber primary" type="button" aria-label="Run command">
-                    Run
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-user-shield"></i>
-          Intelligence Brief
-        </h2>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-lg-4">
-          <div class="operator-card">
-            <div class="card-header">
-              <div class="status-indicator active"></div>
-              <span>ACTIVE OPERATOR</span>
-            </div>
-            <div class="operator-image">
-              <img src="resources/images/uniformpic.jpeg" alt="LT Celine Tannous" class="img-fluid">
-              <div class="clearance-badge">TS/SCI</div>
-            </div>
-            <div class="operator-info">
-              <h3>LT Celine Tannous</h3>
-              <p class="handle">@ObsidianNull</p>
-              <div class="location">
-                <i class="fas fa-map-marker-alt"></i>
-                San Diego, CA | Remote Operations
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-8">
-          <div class="intel-content">
-            <div class="mission-statement">
-              <h3>Mission Statement</h3>
-              <p>My mission is to grow into a skilled cybersecurity professional by applying the discipline, leadership, and risk awareness I developed in high-stakes operational environments, while continuously learning and improving my technical craft.</p>
-            </div>
-            <div class="capabilities-grid">
-              <div class="capability">
-                <i class="fas fa-crosshairs"></i>
-                <h4>Offensive Operations</h4>
-                <p>Penetration testing and red team methodologies</p>
-              </div>
-              <div class="capability">
-                <i class="fas fa-shield-alt"></i>
-                <h4>Defense Architecture</h4>
-                <p>Zero-trust security design and incident response leadership</p>
-              </div>
-              <div class="capability">
-                <i class="fas fa-users-cog"></i>
-                <h4>Team Leadership</h4>
-                <p>Military-trained leadership and cybersecurity team management</p>
-              </div>
-              <div class="capability">
-                <i class="fas fa-search"></i>
-                <h4>Threat Intelligence</h4>
-                <p>Advanced persistent threat analysis and threat hunting</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects/Labs Section -->
-  <section id="projects" class="projects-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-flask"></i>
-          Cyber Arsenal & Labs
-        </h2>
-        <p class="section-subtitle">Curated collection of cybersecurity projects, research, and practical demonstrations</p>
-      </div>
-      <div class="arsenal-grid">
-        <!-- Project 1 -->
-        <div class="arsenal-item" data-category="red-team">
-          <div class="item-header">
-            <div class="classification">UNCLASSIFIED</div>
-            <div class="category-tag red-team">Red Team</div>
-          </div>
-          <div class="item-content">
-            <i class="fas fa-bug"></i>
-            <h3>Advanced Persistent Threat Simulation</h3>
-            <p>Full-scale APT simulation targeting enterprise environment with custom malware and persistence mechanisms.</p>
-            <div class="tech-stack">
-              <span>Metasploit</span>
-              <span>Custom C2</span>
-              <span>PowerShell</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="#" class="action-btn">
-              <i class="fas fa-eye"></i> View Details
-            </a>
-            <a href="#" class="action-btn">
-              <i class="fab fa-github"></i> Repository
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="arsenal-item" data-category="defense">
-          <div class="item-header">
-            <div class="classification">UNCLASSIFIED</div>
-            <div class="category-tag defense">Blue Team</div>
-          </div>
-          <div class="item-content">
-            <i class="fas fa-network-wired"></i>
-            <h3>Zero-Trust Network Architecture</h3>
-            <p>Implementation of enterprise zero-trust security model with micro-segmentation and continuous verification.</p>
-            <div class="tech-stack">
-              <span>pfSense</span>
-              <span>Zeek</span>
-              <span>ELK Stack</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="#" class="action-btn">
-              <i class="fas fa-eye"></i> View Details
-            </a>
-            <a href="#" class="action-btn">
-              <i class="fas fa-download"></i> Whitepaper
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="arsenal-item" data-category="forensics">
-          <div class="item-header">
-            <div class="classification">UNCLASSIFIED</div>
-            <div class="category-tag forensics">Forensics</div>
-          </div>
-          <div class="item-content">
-            <i class="fas fa-search"></i>
-            <h3>Automated Malware Analysis Pipeline</h3>
-            <p>Custom-built automated malware analysis system with dynamic and static analysis capabilities.</p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>Volatility</span>
-              <span>YARA</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="#" class="action-btn">
-              <i class="fas fa-eye"></i> View Details
-            </a>
-            <a href="#" class="action-btn">
-              <i class="fab fa-github"></i> Repository
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="arsenal-item" data-category="research">
-          <div class="item-header">
-            <div class="classification">UNCLASSIFIED</div>
-            <div class="category-tag research">Research</div>
-          </div>
-          <div class="item-content">
-            <i class="fas fa-brain"></i>
-            <h3>AI-Powered Threat Hunting</h3>
-            <p>Machine learning model for automated threat detection and behavioral analysis in enterprise networks.</p>
-            <div class="tech-stack">
-              <span>TensorFlow</span>
-              <span>Pandas</span>
-              <span>Splunk</span>
-            </div>
-          </div>
-          <div class="item-actions">
-            <a href="#" class="action-btn">
-              <i class="fas fa-eye"></i> View Details
-            </a>
-            <a href="#" class="action-btn">
-              <i class="fas fa-file-pdf"></i> Research Paper
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Filter Controls -->
-      <div class="arsenal-filters">
-        <button class="filter-btn active" data-filter="all">All Arsenal</button>
-        <button class="filter-btn" data-filter="red-team">Red Team</button>
-        <button class="filter-btn" data-filter="defense">Blue Team</button>
-        <button class="filter-btn" data-filter="forensics">Forensics</button>
-        <button class="filter-btn" data-filter="research">Research</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Write-Ups Section -->
-  <section id="writeups" class="writeups-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-scroll"></i>
-          Technical Write-Ups
-        </h2>
-        <p class="section-subtitle">Deep-dives into operations, TTPs, and lessons learned</p>
-      </div>
-
-      <div id="writeupsList" class="writeups-grid">
-        <!-- Populated dynamically by writeups.js -->
-      </div>
-      <div id="writeupsFilters" class="writeups-filters"></div>
-    </div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="certifications-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-certificate"></i>
-          Credentials & Clearances
-        </h2>
-        <p class="section-subtitle">Professional certifications and security clearances validating expertise</p>
-      </div>
-      
-      <div class="credentials-grid">
-        <!-- Clearance -->
-        <div class="credential-card clearance">
-          <div class="card-header">
-            <div class="clearance-level">TOP SECRET/SCI</div>
-            <div class="status active">ACTIVE</div>
-          </div>
-          <div class="card-content">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Security Clearance</h3>
-            <p>Top Secret/Sensitive Compartmented Information</p>
-            <div class="issuer">U.S. Department of Defense</div>
-          </div>
-        </div>
-
-        <!-- Education -->
-        <div class="credential-card education">
-          <div class="card-header">
-            <div class="degree">BS Cyber Operations</div>
-            <div class="year">2021</div>
-          </div>
-          <div class="card-content">
-            <i class="fas fa-graduation-cap"></i>
-            <h3>CAE-CO Graduate</h3>
-            <p>Center of Academic Excellence in Cyber Operations</p>
-            <div class="issuer">U.S. Naval Academy</div>
-          </div>
-        </div>
-
-        <!-- CompTIA Security+ -->
-        <div class="credential-card certification" data-cert="security-plus">
-          <div class="card-header">
-            <div class="cert-logo">
-              <img src="resources/images/comptia-security-plus.png" alt="Security+" onerror="this.style.display='none'">
-            </div>
-            <a class="verification-btn" href="resources/images/CompTIA%20Security%2B%20ce%20certificate.pdf" target="_blank" rel="noopener" aria-label="View Security+ certificate (PDF)" title="View Security+ certificate (PDF)">
-              <i class="fas fa-external-link-alt"></i>
-            </a>
-          </div>
-          <div class="card-content">
-            <h3>CompTIA Security+</h3>
-            <p>DoD 8570 IAT Level II Baseline</p>
-            <div class="cert-details">
-              <span class="cert-id">Cert ID: SY0-701</span>
-              <span class="expiry">Valid: 2025-2028</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CompTIA PenTest+ -->
-        <div class="credential-card certification" data-cert="pentest-plus">
-          <div class="card-header">
-            <div class="cert-logo">
-              <img src="resources/images/comptia-pentest-plus.png" alt="PenTest+" onerror="this.style.display='none'">
-            </div>
-            <div class="verification-btn">
-              <i class="fas fa-external-link-alt"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>CompTIA PenTest+</h3>
-            <p>Advanced Penetration Testing</p>
-            <div class="cert-details">
-              <span class="status">In Progress</span>
-              <span class="target">Target: Q1 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CompTIA CySA+ (In Progress) -->
-        <div class="credential-card certification in-progress" data-cert="cysa-plus">
-          <div class="card-header">
-            <div class="cert-logo">
-              <img src="resources/images/comptia-cysa-plus.png" alt="CompTIA CySA+" onerror="this.style.display='none'">
-            </div>
-            <div class="progress-indicator">
-              <i class="fas fa-clock"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>CompTIA CySA+</h3>
-            <p>Cybersecurity Analyst (CySA+)</p>
-            <div class="cert-details">
-              <span class="status">In Progress</span>
-              <span class="target">Target: Q2 2026</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- OSCP (Planned) -->
-        <div class="credential-card certification planned" data-cert="oscp">
-          <div class="card-header">
-            <div class="cert-logo">
-              <img src="resources/images/oscp-logo.png" alt="OSCP" onerror="this.style.display='none'">
-            </div>
-            <div class="planned-indicator">
-              <i class="fas fa-calendar-plus"></i>
-            </div>
-          </div>
-          <div class="card-content">
-            <h3>OSCP</h3>
-            <p>Offensive Security Certified Professional</p>
-            <div class="cert-details">
-              <span class="status">Planned</span>
-              <span class="target">Target: Q3 2026</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <i class="fas fa-satellite-dish"></i>
-          Establish Communications
-        </h2>
-        <p class="section-subtitle">Secure channels available for professional collaboration and opportunities</p>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="comms-terminal">
-            <div class="terminal-header">
-              <div class="terminal-buttons">
-                <span class="btn-red"></span>
-                <span class="btn-yellow"></span>
-                <span class="btn-green"></span>
-              </div>
-              <span class="terminal-title">secure-comms@obsidiannull</span>
-            </div>
-            <form id="contactForm" class="terminal-form">
-              <div class="form-group">
-                <label class="terminal-label">$ enter-name --required</label>
-                <input type="text" id="name" name="name" class="terminal-input" 
-                       required maxlength="100" 
-                       pattern="^[a-zA-Z\s\-\'\.]{2,100}$"
-                       placeholder="Your full name">
-              </div>
-              
-              <div class="form-group">
-                <label class="terminal-label">$ enter-email --encrypted</label>
-                <input type="email" id="email" name="email" class="terminal-input" 
-                       required maxlength="255"
-                       placeholder="your.email@domain.com">
-              </div>
-              
-              <div class="form-group">
-                <label class="terminal-label">$ compose-message --secure</label>
-                <textarea id="message" name="message" class="terminal-textarea" 
-                          required maxlength="2000" minlength="10" rows="6"
-                          placeholder="Describe your project, opportunity, or collaboration..."></textarea>
-                <div class="char-counter">
-                  <span id="charCount">0</span>/2000 characters
+                <div class="screen-tile">
+                  <h4>Nessus or Wireshark evidence</h4>
+                  <p>Best for proving remediation work and packet-level investigation skill.</p>
                 </div>
               </div>
-              
-              <!-- Honeypot -->
-              <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
-              
-              <button type="submit" class="btn-cyber primary" id="submitBtn">
-                <span class="btn-text">
-                  <i class="fas fa-paper-plane"></i>
-                  Transmit Message
-                </span>
-                <span class="btn-spinner" style="display: none;">
-                  <i class="fas fa-spinner fa-spin"></i>
-                  Encrypting & Sending...
-                </span>
-              </button>
-            </form>
-          </div>
-        </div>
-        
-        <div class="col-lg-6">
-          <div class="contact-methods">
-            <h3>Alternative Communication Channels</h3>
-            
-            <div class="contact-grid">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-envelope-open"></i>
-                </div>
-                <div class="contact-info">
-                  <h4>Direct Email</h4>
-                  <a href="mailto:obsidiannullsec@gmail.com">obsidiannullsec@gmail.com</a>
-                  <a href="mailto:celinetannous2021@gmail.com">celinetannous2021@gmail.com</a>
-                </div>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-info">
-                  <h4>Secure Line</h4>
-                  <a href="tel:+17203183311">+1 (720) 318-3311</a>
-                </div>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fab fa-linkedin"></i>
-                </div>
-                <div class="contact-info">
-                  <h4>Professional Network</h4>
-                  <a href="https://linkedin.com/in/celine-tannous-34a44a1a7" target="_blank">LinkedIn Profile</a>
-                </div>
-              </div>
-              
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fab fa-github"></i>
-                </div>
-                <div class="contact-info">
-                  <h4>Code Repository</h4>
-                  <a href="https://github.com/ObsidianNull" target="_blank">@ObsidianNull</a>
-                </div>
-              </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">
-                <i class="fas fa-x"></i>
-              </div>
-              <div class="contact-info">
-                <h4>X</h4>
-                <a href="https://x.com/ObsidianNull" target="_blank">@ObsidianNull</a>
-              </div>
             </div>
-
-            <div class="contact-item">
-              <div class="contact-info">
-                  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1822193" 
-                          style="border: none; width: 120%; height: 90px; display: flex; overflow: auto;"></iframe>
-              </div>
+            <div class="meta-block">
+              <strong>Suggested additions</strong>
+              <p>Add 3–4 real screenshots from the lab with short captions explaining what is visible, why it matters, and what action was taken.</p>
             </div>
-          </div>
-            
-            
-            <div class="availability-status">
-              <div class="status-indicator active"></div>
-              <div class="status-text">
-                <h4>Current Availability</h4>
-                <p>Available for freelance projects and looking for future full-time opportunities in cybersecurity roles for Winter 2026.</p>
-                <small>Response time: Within 24 hours</small>
-              </div>
-            </div>
-          </div>
+            <a class="text-link" href="https://github.com/ObsidianNull" target="_blank" rel="noopener">Open GitHub portfolio for deeper project proof</a>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="cyber-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3>ObsidianNull</h3>
-          <p>Hard Systems. Harder Standards.</p>
+    <section id="skills" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Technical focus</h2>
+          <p>My work is centered on defensive security fundamentals: visibility, investigation, hardening, detection, and the habits that make security operations more effective.</p>
         </div>
-        <div class="footer-links">
-          <a href="#about">Intel</a>
-          <a href="#projects">Arsenal</a>
-          <a href="#certifications">Credentials</a>
-          <a href="#contact">Comms</a>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Security tooling</h3>
+            <p class="muted">Splunk, Wazuh, Sysmon, Nessus, Wireshark, Atomic Red Team</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Infrastructure and platforms</h3>
+            <p class="muted">Windows, Linux, VMware, Active Directory, pfSense, enterprise-style lab networking</p>
+          </article>
+          <article class="skill-card reveal">
+            <h3>Working style</h3>
+            <p class="muted">Clear documentation, structured troubleshooting, training, risk ownership, and calm execution under pressure</p>
+          </article>
         </div>
-        <div class="footer-meta">
-          <p>&copy; <span id="year"></span> Celine Tannous | ObsidianNull</p>
-          <p>Classified operations not displayed</p>
+
+        <div class="note-card reveal" style="margin-top: 1rem;">
+          <strong>Current direction</strong>
+          <p class="muted">I’m building toward work in security monitoring, detection engineering, vulnerability management, SOC workflows, incident handling support, and process-driven improvement.</p>
         </div>
       </div>
+    </section>
+
+    <section class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Proof of work</h2>
+          <p>Public projects, technical writing, and supporting materials make it easier to see how I think and what I’ve built so far.</p>
+        </div>
+
+        <div class="proof-grid-cards">
+          <article class="proof-card reveal">
+            <h3>GitHub portfolio</h3>
+            <p class="muted">Hands-on cybersecurity projects and lab work focused on blue-team and security operations practice.</p>
+            <a class="text-link" href="https://github.com/ObsidianNull" target="_blank" rel="noopener">View GitHub profile</a>
+          </article>
+
+          <article class="proof-card reveal">
+            <h3>Resume and credentials</h3>
+            <p class="muted">A concise overview of my background, technical direction, and current qualifications.</p>
+            <a class="text-link" href="resources/images/Celine%20Tannous%20Resume.pdf" target="_blank" rel="noopener">Open resume PDF</a>
+          </article>
+
+          <article class="proof-card reveal">
+            <h3>Technical writing</h3>
+            <p class="muted">A public write-up adds evidence of analysis, documentation, and communication.</p>
+            <a class="text-link" href="resources/writeups/apt29-ttp.html" target="_blank" rel="noopener">Read the APT29 TTP write-up</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials" class="section">
+      <div class="container-shell">
+        <div class="section-heading reveal">
+          <h2>Credentials, education, and availability</h2>
+          <p>A straightforward overview of education, certifications, and where I’m headed next.</p>
+        </div>
+
+        <div class="credentials-grid">
+          <article class="credential-card reveal">
+            <h3>Education</h3>
+            <p class="muted">United States Naval Academy</p>
+            <ul class="clean-list">
+              <li>Bachelor of Science, Cyber Operations (Honors Program), 2021</li>
+              <li>Graduated with Merit</li>
+              <li>CAE-CO designated program</li>
+            </ul>
+          </article>
+
+          <article class="credential-card reveal">
+            <h3>Credentials</h3>
+            <ul class="clean-list">
+              <li>Active TS/SCI</li>
+              <li>CompTIA Security+</li>
+              <li>CompTIA PenTest+ in progress</li>
+              <li>CompTIA CySA+ in progress</li>
+            </ul>
+          </article>
+
+          <article class="credential-card reveal">
+            <h3>Looking ahead</h3>
+            <p class="muted">Seeking full-time cybersecurity opportunities starting Winter 2026 / early 2027.</p>
+            <div class="role-tags" style="margin-top: 0.75rem;">
+              <span class="tag">Cybersecurity Engineer</span>
+              <span class="tag">Detection Engineer</span>
+              <span class="tag">Security Analyst</span>
+              <span class="tag">SOC / Blue Team</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container-shell contact-grid">
+        <article class="contact-card primary reveal">
+          <h2>Let’s connect.</h2>
+          <p class="muted">I’m always glad to connect with people working in cybersecurity, especially around security engineering, detection, SOC, blue-team, incident response, and security operations.</p>
+          <div class="contact-actions">
+            <a class="button-primary" href="mailto:obsidiannullsec@gmail.com">Email Me</a>
+            <a class="button-secondary" href="https://linkedin.com/in/celine-tannous-34a44a1a7" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button-ghost" href="https://github.com/ObsidianNull" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="contact-card reveal">
+          <h3>Contact details</h3>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a class="text-link" href="mailto:obsidiannullsec@gmail.com">obsidiannullsec@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a class="text-link" href="tel:+17203183311">+1 (720) 318-3311</a></li>
+            <li><strong>LinkedIn:</strong> <a class="text-link" href="https://linkedin.com/in/celine-tannous-34a44a1a7" target="_blank" rel="noopener">celine-tannous-34a44a1a7</a></li>
+            <li><strong>GitHub:</strong> <a class="text-link" href="https://github.com/ObsidianNull" target="_blank" rel="noopener">ObsidianNull</a></li>
+          </ul>
+          <div class="meta-block">
+            <strong>Current areas of interest</strong>
+            <p>Security operations, SOC, blue-team engineering, vulnerability management, detection engineering, and early-career cyber engineering roles.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-shell footer-wrap">
+      <span>© <span id="year"></span> Celine Tannous • ObsidianNull</span>
+      <span>Built with clarity, credibility, and technical focus.</span>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="resources/JQuery/jquery-3.6.3.min.js"></script>
-  <script src="resources/bootstrap-4.3.1-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="resources/javascript/intro.js"></script>
-  <script src="resources/javascript/index.js"></script>
-  <script src="resources/javascript/contact-validation-github.js"></script>
-  <script src="resources/javascript/writeups.js"></script>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="resources/javascript/recruiter-portfolio.js"></script>
 </body>
 </html>
