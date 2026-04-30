@@ -380,8 +380,6 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 60px;
-  scroll-snap-align: start;
 }
 
 .hero-matrix {
