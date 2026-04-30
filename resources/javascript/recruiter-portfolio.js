@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Stamp stagger delay on reveal elements that are siblings inside a grid/list
   const staggerParents = document.querySelectorAll(
-    '.hero-grid, .proof-grid, .info-grid, .experience-grid, .project-grid, .visual-proof-grid, .skill-grid, .credential-grid, .contact-grid'
+    '.hero-grid, .proof-grid, .info-grid, .experience-grid, .project-grid, .visual-proof-grid, .skills-grid, .credentials-grid, .contact-grid'
   );
   staggerParents.forEach(parent => {
     const children = parent.querySelectorAll(':scope > .reveal, :scope > * > .reveal');
