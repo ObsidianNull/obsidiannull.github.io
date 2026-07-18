@@ -1,17 +1,19 @@
 /* ─── Design tokens ─────────────────────────────────────────── */
 :root {
-  --bg:            #09090b;
-  --bg-elevated:   #111113;
-  --bg-subtle:     #1c1c1f;
-  --border:        rgba(255, 255, 255, 0.07);
-  --border-strong: rgba(255, 255, 255, 0.13);
-  --text:          #f4f4f5;
-  --text-2:        #a1a1aa;
-  --text-3:        #52525b;
-  --accent:        #3b82f6;
-  --accent-light:  #93c5fd;
-  --success:       #4ade80;
-  --warning:       #fcd34d;
+  --bg:            #07101f;
+  --bg-elevated:   #0c1a30;
+  --bg-subtle:     #132340;
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --text:          #f1f5f9;
+  --text-2:        #94a3b8;
+  --text-3:        #475569;
+  --accent:        #0ea5e9;
+  --accent-light:  #38bdf8;
+  --accent-glow:   rgba(14, 165, 233, 0.1);
+  --success:       #22c55e;
+  --success-glow:  rgba(34, 197, 94, 0.12);
+  --warning:       #fbbf24;
   --radius:        10px;
   --radius-sm:     6px;
   --max-width:     1120px;
@@ -45,8 +47,8 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(9, 9, 11, 0.88);
-  backdrop-filter: blur(12px);
+  background: rgba(7, 16, 31, 0.94);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -153,9 +155,15 @@ img { max-width: 100%; display: block; }
 .button-primary {
   background: var(--accent);
   color: white;
+  transition: background 160ms, box-shadow 200ms, opacity 120ms;
 }
 
-.button-primary:hover { opacity: 0.88; color: white; }
+.button-primary:hover {
+  opacity: 1;
+  background: #0284c7;
+  color: white;
+  box-shadow: 0 0 16px rgba(14, 165, 233, 0.3);
+}
 
 .button-secondary {
   background: rgba(255, 255, 255, 0.07);
@@ -184,6 +192,7 @@ img { max-width: 100%; display: block; }
   padding: 4.5rem 0 4rem;
   border-top: none; /* hero is the first section, no divider above */
   border-bottom: 1px solid var(--border);
+  background: radial-gradient(ellipse 110% 70% at 65% -5%, rgba(14, 165, 233, 0.07) 0%, transparent 58%);
 }
 
 .hero-grid {
@@ -208,8 +217,8 @@ img { max-width: 100%; display: block; }
   gap: 0.4rem;
   padding: 0.28rem 0.65rem;
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.22);
+  background: var(--accent-glow);
+  border: 1px solid rgba(14, 165, 233, 0.28);
   color: var(--accent-light);
   font-size: 0.78rem;
   font-weight: 500;
@@ -338,14 +347,18 @@ img { max-width: 100%; display: block; }
 }
 
 .pill.success {
-  background: rgba(74, 222, 128, 0.08);
-  border-color: rgba(74, 222, 128, 0.2);
-  color: #86efac;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--success-glow);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.08);
 }
 
 .pill.warning {
-  background: rgba(252, 211, 77, 0.08);
-  border-color: rgba(252, 211, 77, 0.2);
+  background: rgba(251, 191, 36, 0.08);
+  border-color: rgba(251, 191, 36, 0.25);
   color: #fde68a;
 }
 
@@ -354,6 +367,7 @@ img { max-width: 100%; display: block; }
   padding: 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, transparent 60%);
 }
 
 .proof-grid {
@@ -397,8 +411,18 @@ img { max-width: 100%; display: block; }
   font-size: clamp(1.5rem, 2.5vw, 2.1rem);
   letter-spacing: -0.025em;
   font-weight: 600;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   color: var(--text);
+}
+
+.section-heading h2::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  margin-top: 0.55rem;
 }
 
 .section-heading p {
@@ -648,7 +672,7 @@ img { max-width: 100%; display: block; }
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.6);
+  background: rgba(14, 165, 233, 0.6);
 }
 
 .screen-placeholder-body {
@@ -761,7 +785,7 @@ img { max-width: 100%; display: block; }
     top: 58px;
     padding: 0.6rem;
     border-radius: var(--radius);
-    background: rgba(17, 17, 19, 0.98);
+    background: rgba(7, 16, 31, 0.98);
     border: 1px solid var(--border);
     display: none;
     flex-direction: column;
@@ -832,4 +856,47 @@ img { max-width: 100%; display: block; }
   .proof-stat { border-right: none; border-top: 1px solid var(--border); }
 
   .proof-stat:first-child { border-top: none; }
+}
+
+/* ─── Card hover effects ──────────────────────────────────────── */
+.experience-card,
+.project-card,
+.info-card,
+.skill-card,
+.credential-card,
+.proof-card {
+  transition: background 180ms ease;
+}
+
+.experience-card:hover,
+.project-card:hover,
+.info-card:hover,
+.skill-card:hover,
+.credential-card:hover,
+.proof-card:hover {
+  background: var(--bg-subtle);
+}
+
+/* ─── Status dot (live/active indicator) ─────────────────────── */
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  display: inline-block;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2); }
+  50%       { opacity: 0.85; box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); }
+}
+
+/* ─── Skill / credential card icon accents ───────────────────── */
+.skill-card h3 .fa-sm,
+.credential-card h3 .fa-sm {
+  color: var(--accent);
+  opacity: 0.8;
 }
