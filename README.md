@@ -36,7 +36,7 @@ obsidiannull.github.io/
     │   ├── uniformpic.jpeg             # Profile photo
     │   ├── lab-architecture.svg        # Home lab diagram
     │   ├── detection-pipeline.svg      # Detection pipeline diagram
-    │   └── Celine Tannous Resume.pdf   # Downloadable resume
+    │   └── Celine_Tannous_Master_Resume.pdf   # Downloadable resume
     ├── writeups/
     │   ├── apt29-ttp.html              # Public technical write-up (APT29 TTPs)
     │   ├── apt29-ttp.md                # Source markdown for write-up
